@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Preparación examen DWES — 8 junio 2026 — Pablo Cabello Hurtado</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+:root{
+  --bg:#0e1117; --panel:#161b22; --panel2:#1c232c; --border:#30363d;
+  --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff; --accent2:#7ee787;
+  --warn:#f0883e; --bad:#ff7b72; --good:#56d364; --code:#0d1117;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+header{position:sticky;top:0;background:#0a0d12;border-bottom:1px solid var(--border);padding:14px 22px;z-index:50}
+h1{margin:0;font-size:20px;font-weight:600}
+h1 small{color:var(--muted);font-weight:400;margin-left:10px;font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+nav button{background:var(--panel);color:var(--text);border:1px solid var(--border);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px}
+nav button:hover{background:var(--panel2)}
+nav button.active{background:var(--accent);color:#0a0d12;border-color:var(--accent);font-weight:600}
+main{max-width:1100px;margin:0 auto;padding:24px}
+.section{display:none}
+.section.active{display:block}
+h2{color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:8px;margin-top:0}
+h3{color:var(--accent2);margin-top:24px}
+h4{color:#fff;margin:18px 0 6px;font-size:15px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0}
+.card.replica{border-left:4px solid var(--accent2)}
+.card.original{border-left:4px solid var(--warn)}
+pre{background:var(--code);border:1px solid var(--border);border-radius:6px;padding:12px;overflow-x:auto;font-size:13px;line-height:1.5;margin:8px 0}
+code{font-family:SFMono-Regular,Menlo,Consolas,monospace;color:#d2a8ff}
+pre code{color:#e6edf3}
+.kw{color:#ff7b72}
+.str{color:#a5d6ff}
+.cmt{color:#8b949e;font-style:italic}
+.fn{color:#d2a8ff}
+.var{color:#79c0ff}
+details{background:var(--panel2);border:1px solid var(--border);border-radius:6px;margin:10px 0;padding:10px 14px}
+details[open]{background:var(--panel2)}
+summary{cursor:pointer;font-weight:600;color:var(--accent);user-select:none}
+summary::marker{color:var(--accent)}
+.tag{display:inline-block;background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:2px 10px;font-size:11px;color:var(--muted);margin-left:8px}
+.tag.warn{color:var(--warn);border-color:var(--warn)}
+.tag.good{color:var(--good);border-color:var(--good)}
+.tag.bad{color:var(--bad);border-color:var(--bad)}
+.q{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px;margin:12px 0}
+.q .qhead{font-weight:600;color:#fff;margin-bottom:8px}
+.q .opt{display:flex;align-items:flex-start;padding:6px 8px;border-radius:4px;cursor:pointer;border:1px solid transparent;margin:3px 0;font-size:14px}
+.q .opt:hover{background:var(--panel2)}
+.q .opt input{margin:4px 10px 0 0;flex-shrink:0}
+.q .opt.correct{background:rgba(86,211,100,0.12);border-color:var(--good)}
+.q .opt.wrong{background:rgba(255,123,114,0.12);border-color:var(--bad)}
+.q .feedback{margin-top:10px;padding:10px;border-radius:4px;font-size:13px;display:none}
+.q .feedback.show{display:block}
+.q .feedback.ok{background:rgba(86,211,100,0.1);color:var(--good);border:1px solid var(--good)}
+.q .feedback.ko{background:rgba(255,123,114,0.1);color:var(--bad);border:1px solid var(--bad)}
+.scorebar{position:sticky;top:62px;background:#0a0d12;padding:10px 16px;border:1px solid var(--border);border-radius:8px;margin:10px 0;z-index:40;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.scorebar .stat{font-size:13px;color:var(--muted)}
+.scorebar .stat b{color:var(--text);font-size:15px}
+.scorebar button{background:var(--accent);color:#0a0d12;border:none;padding:6px 14px;border-radius:5px;cursor:pointer;font-weight:600}
+.scorebar button.reset{background:var(--panel);color:var(--text);border:1px solid var(--border);font-weight:400}
+.intro{background:linear-gradient(135deg,#1a2332,#161b22);border:1px solid var(--accent);padding:22px;border-radius:10px;margin-bottom:20px}
+.intro h2{color:var(--accent);border:none;padding:0;margin-top:0}
+.checklist{list-style:none;padding:0}
+.checklist li{padding:6px 0;border-bottom:1px solid var(--border)}
+.checklist li:before{content:"✓ ";color:var(--good);font-weight:bold}
+.weight{display:inline-block;background:rgba(88,166,255,0.15);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-left:8px}
+.note{background:rgba(240,136,62,0.08);border-left:3px solid var(--warn);padding:10px 14px;border-radius:4px;margin:10px 0;font-size:13px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0}
+@media (max-width:760px){.compare{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+th,td{border:1px solid var(--border);padding:8px;text-align:left}
+th{background:var(--panel2);color:var(--accent)}
+.toc{background:var(--panel2);border:1px solid var(--border);padding:14px;border-radius:6px;font-size:14px}
+.toc a{color:var(--accent);text-decoration:none;display:block;padding:3px 0}
+.toc a:hover{text-decoration:underline}
+.theory{background:#1a2332;border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:8px;padding:22px;margin:18px 0}
+.theory h3{color:var(--accent);margin-top:0}
+.theory h4{color:#fff;margin:20px 0 8px;font-size:15px;border-bottom:1px solid var(--border);padding-bottom:4px}
+.theory h5{color:var(--accent2);margin:14px 0 4px;font-size:14px}
+.theory p{margin:8px 0}
+.theory ul{margin:6px 0 10px 0;padding-left:22px}
+.theory li{margin:4px 0}
+.theory .pill{display:inline-block;background:var(--panel2);border:1px solid var(--border);padding:1px 8px;border-radius:10px;font-size:11px;color:var(--muted);margin:0 4px}
+.theory code{background:#0d1117;padding:1px 6px;border-radius:3px;color:#79c0ff;font-size:13px}
+.theory pre{margin:8px 0}
+.theory .key{background:rgba(86,211,100,0.08);border-left:3px solid var(--good);padding:8px 12px;border-radius:4px;margin:8px 0;font-size:13px}
+.theory .warn{background:rgba(240,136,62,0.08);border-left:3px solid var(--warn);padding:8px 12px;border-radius:4px;margin:8px 0;font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Preparación examen DWES — Junio 2026 <small>Pablo Cabello Hurtado · DAW · Lunes 8 jun · 15:00 / 15:45</small></h1>
+<nav id="topnav"></nav>
+</header>
+
+<main>
+
+<!-- ============================================ -->
+<!-- INTRODUCCIÓN -->
+<!-- ============================================ -->
+<section id="intro" class="section active">
+<div class="intro">
+<h2>📘 Material de estudio personalizado</h2>
+<p>Material para el examen de <b>DWES del lunes 8 de junio de 2026</b> (turnos de <b>15:00 y 15:45</b>). Está afinado con lo que los profesores explicaron en las <b>dos videoconferencias de repaso (21 y 28 de mayo)</b>, por lo que refleja el formato real de cada bloque.</p>
+<ul class="checklist">
+<li><b>Un bloque por cada unidad/tarea (A–G).</b> Todo el examen versa sobre lo que has hecho en las tareas DWES01–DWES07 (dominio de <b>películas y críticas</b>).</li>
+<li><b>Examen del año pasado (junio 2025)</b> resuelto/comentado como referencia + <b>ejercicio replicado</b> adaptado a tus prácticas (Películas, Géneros, Críticas, namespace PCH).</li>
+<li><b>Cuestionarios y respuestas cortas interactivas</b> con corrección automática, según el formato real de cada bloque.</li>
+</ul>
+
+<div class="theory" style="margin-top:18px">
+<h3>🗓️ Instrucciones y logística (según las sesiones de repaso)</h3>
+<ul>
+<li><b>Cuándo:</b> lunes 8 de junio, turnos 15:00 / 15:45. <b>Duración:</b> unas 3 horas.</li>
+<li><b>Formato:</b> examen <b>en papel</b>, eminentemente <b>práctico</b> y de <b>nivel básico</b> (lo trabajado en las tareas).</li>
+<li><b>Material:</b> solo <b>bolígrafo</b> negro o azul (lleva más de uno). <b>Prohibido</b> móvil y cualquier material adicional.</li>
+<li><b>18 páginas, no te asustes:</b> a la <b>izquierda el enunciado</b> y a la <b>derecha el hueco para responder</b>, con recuadros muy grandes (hay mucho espacio aposta, sobre todo en A·B·C; <b>no significa que haya que escribir mucho</b>).</li>
+<li><b>Puedes pedir hojas extra</b> para borrador (se entregan y se destruyen). Puedes responder los bloques en <b>cualquier orden</b>: empieza por lo que mejor sepas.</li>
+</ul>
+<div class="key"><b>Estrategia clave que recomiendan:</b> repasar <b>tus propias tareas y sus correcciones</b> y hacerte una <b>"chuleta"</b> (no se usa en el examen, es técnica de estudio) por unidad: un trocito de código + para qué sirve cada instrucción. Esta web es justamente eso, ya hecho.</div>
+</div>
+
+<h3 style="margin-top:18px">Ponderación y formato del examen</h3>
+<p style="color:var(--muted);font-size:13px">Cada bloque es como un "mini-examen" que se califica de 0 a 10 y se multiplica por su peso; la nota final es la <b>media ponderada</b> (sobre 10). No hay nota mínima por bloque: aprobar = que la media salga ≥ 5.</p>
+<table>
+<tr><th>Bloque</th><th>Tema (unidad)</th><th>Formato</th><th>Peso</th></tr>
+<tr><td>A</td><td>PHP básico: formularios, funciones, arrays y bucles (U1)</td><td>Desarrollo (escribir código)</td><td>10,64%</td></tr>
+<tr><td>B</td><td>Bases de datos · PDO (U2)</td><td>Desarrollo (escribir código)</td><td>20,03%</td></tr>
+<tr><td>C</td><td>Sesiones (U3)</td><td>Desarrollo (escribir código)</td><td>15,67%</td></tr>
+<tr><td>D</td><td>Composer, namespaces, MVC, Smarty (U4)</td><td><b>Respuesta corta</b> (1–2 líneas, sin penalización)</td><td>8%</td></tr>
+<tr><td>E</td><td>Laravel: rutas, Eloquent, Blade (U5)</td><td><b>Tipo test</b> (reconocer)</td><td>22%</td></tr>
+<tr><td>F</td><td>API REST + Guzzle (U6)</td><td><b>Tipo test</b> (reconocer)</td><td>18%</td></tr>
+<tr><td>G</td><td>JAXON / AJAX (U7)</td><td><b>Tipo test</b> (reconocer)</td><td>6%</td></tr>
+</table>
+<p style="font-size:13px"><b>Primer cuatrimestre (A+B+C) ≈ 46%</b> · <b>Segundo cuatrimestre (D+E+F+G) ≈ 54%</b>. Lo que más pesa: <b>BD (B)</b> y el patrón <b>MVC (E y F, + base en D)</b>. Dedícales más tiempo.</p>
+
+<div class="note">
+<b>Penalización en los tipo test (E, F, G):</b> cada pregunta <b>incorrecta resta dentro de su propio bloque</b> (no afecta a otros bloques, porque cada uno pesa distinto). Las dejadas <b>en blanco ni suman ni restan</b>. <b>El bloque D NO penaliza</b> (es de respuesta corta). <span style="color:var(--muted)">La fracción exacta del descuento no se concretó en las sesiones; el simulador asume −¼ como referencia.</span>
+</div>
+
+<div class="note" style="border-left-color:var(--bad)">
+<b>Quién hace qué:</b> si aprobaste el <b>primer cuatrimestre en febrero</b>, no tienes que hacer A·B·C (se arrastra tu nota de febrero: ej.1→A 11%, ej.2→B 20%, ej.3→C 15%), salvo que quieras subir nota (hay que avisarlo antes). Si superaste la <b>FCT/formación en empresa</b>, no haces los bloques <b>F y G</b>. En junio hay que sacar la prueba (≥5 de media ponderada).
+</div>
+
+<details>
+<summary>🚫 Qué NO entra (mencionado expresamente)</summary>
+<ul style="margin:8px 0 0 0">
+<li><b>SOAP</b> (aparece en los contenidos de U6 pero <b>no se pregunta</b>).</li>
+<li>En AJAX (G): <b>jQuery, <code>fetch()</code> y <code>XMLHttpRequest</code> no son el foco</b> — se centra en <b>JAXON</b> y en los conceptos de AJAX / app híbrida.</li>
+<li><b>Traits</b> (no se aplicaron en las tareas); herencia/interfaces se valoran menos.</li>
+<li><b>Smarty/Blade complejos:</b> solo lo más sencillo (proyectar variable, <code>if</code>, layouts básicos). En E/F no hay que <b>escribir</b> código, solo reconocerlo.</li>
+<li><code>FormRequest</code> de Laravel: se permite usarlo pero <b>no se pide</b>.</li>
+</ul>
+</details>
+
+<h3>Cómo usar este material</h3>
+<p>Usa la barra de navegación de arriba para saltar entre bloques. En cada bloque verás:</p>
+<ol>
+<li><b>El enunciado de referencia</b> (examen del año pasado / febrero) con su solución comentada (botón "Ver solución").</li>
+<li><b>Un ejercicio replicado</b> adaptado a tu dominio de películas (PCH) basado en tus prácticas DWES01-DWES07.</li>
+<li><b>A·B·C:</b> ejercicios de desarrollo. <b>D:</b> respuestas cortas. <b>E·F·G:</b> cuestionarios tipo test interactivos con corrección y explicación al instante.</li>
+</ol>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- BLOQUE A - PHP BÁSICO -->
+<!-- ============================================ -->
+<section id="bloqueA" class="section">
+<h2>Bloque A · PHP básico (formularios, funciones, arrays) <span class="weight">10,64%</span> <span class="tag good">Desarrollo</span></h2>
+
+<div class="note">
+<b>Formato (según repaso):</b> ejercicio de <b>desarrollo</b> (escribir código). Suele haber <b>dos ejercicios</b> sobre la Unidad 1: uso de <b>formularios</b>, <b>funciones</b> y <b>organización del código</b>. Aunque no se nombren, implican <b>arrays</b> y <b>bucles</b> (conceptos básicos de cualquier lenguaje). Te dan <b>fragmentos de código</b> y tu respuesta debe <b>encajar</b> con ellos (mantener la coherencia). Es más corto que en febrero.
+</div>
+
+<div class="card original">
+<h3>📄 Ejemplo de referencia (estilo junio 2025)</h3>
+<p style="color:var(--muted);font-size:13px">El profesor repasó este modelo en la sesión: filtrar datos recibidos de un formulario y construir un array a partir de ellos.</p>
+
+<h4>FRAGMENTO A1 — datos y formulario</h4>
+<pre><code><span class="cmt">// Días válidos de la semana (clave => etiqueta)</span>
+<span class="var">$diasSemana</span> = [
+    <span class="str">'L'</span>=&gt;<span class="str">'Lunes'</span>, <span class="str">'M'</span>=&gt;<span class="str">'Martes'</span>, <span class="str">'X'</span>=&gt;<span class="str">'Miércoles'</span>,
+    <span class="str">'J'</span>=&gt;<span class="str">'Jueves'</span>, <span class="str">'V'</span>=&gt;<span class="str">'Viernes'</span>
+];
+
+<span class="cmt">// El formulario manda checkboxes name="dias[]" via POST</span>
+<span class="kw">foreach</span> (<span class="var">$diasSemana</span> <span class="kw">as</span> <span class="var">$k</span> =&gt; <span class="var">$texto</span>) {
+    <span class="kw">echo</span> <span class="str">"&lt;input type='checkbox' name='dias[]' value='$k'&gt; $texto"</span>;
+}</code></pre>
+
+<h4>FRAGMENTO A2 — uso</h4>
+<pre><code><span class="var">$diasSeleccionados</span> = <span class="fn">validarDatosRecibidos</span>(<span class="kw">array_keys</span>(<span class="var">$diasSemana</span>));
+
+<span class="kw">if</span> (<span class="var">$diasSeleccionados</span> === <span class="kw">false</span>) {
+    <span class="kw">echo</span> <span class="str">"No se han seleccionado días válidos."</span>;
+} <span class="kw">else</span> {
+    <span class="var">$agenda</span> = <span class="fn">generarEventos</span>(<span class="var">$diasSeleccionados</span>, <span class="var">$eventos</span>);
+}</code></pre>
+
+<p><b>Pide:</b> implementar <code>validarDatosRecibidos($diasValidos)</code> que devuelva los días recibidos por POST <b>solo si</b> existen y están dentro de los días válidos; en caso contrario, <code>false</code>. (El fragmento A2 ya te dice que puede devolver <code>false</code> → coherencia.)</p>
+
+<details>
+<summary>✅ Ver solución comentada</summary>
+<pre><code><span class="cmt">/**
+ * Devuelve los días recibidos vía POST que sean válidos,
+ * o false si no se recibe nada o alguno no es válido.
+ * @param  array       $diasValidos  claves de días aceptados (['L','M',...])
+ * @return array|false
+ */</span>
+<span class="kw">function</span> <span class="fn">validarDatosRecibidos</span>(<span class="kw">array</span> <span class="var">$diasValidos</span>)
+{
+    <span class="cmt">// 1) ¿Llega 'dias' por POST y es un array?</span>
+    <span class="kw">if</span> (!<span class="kw">isset</span>(<span class="var">$_POST</span>[<span class="str">'dias'</span>]) || !<span class="fn">is_array</span>(<span class="var">$_POST</span>[<span class="str">'dias'</span>])) {
+        <span class="kw">return false</span>;
+    }
+
+    <span class="cmt">// 2) Cada día recibido debe estar entre los válidos</span>
+    <span class="kw">foreach</span> (<span class="var">$_POST</span>[<span class="str">'dias'</span>] <span class="kw">as</span> <span class="var">$dia</span>) {
+        <span class="kw">if</span> (!<span class="fn">in_array</span>(<span class="var">$dia</span>, <span class="var">$diasValidos</span>)) {
+            <span class="kw">return false</span>;   <span class="cmt">// alguno no es válido</span>
+        }
+    }
+
+    <span class="cmt">// 3) Todo correcto: devolvemos los días seleccionados</span>
+    <span class="kw">return</span> <span class="var">$_POST</span>[<span class="str">'dias'</span>];
+}</code></pre>
+<div class="note">
+<b>Por qué:</b><br>
+• <code>isset()</code> + <code>is_array()</code> → evita avisos si no llega nada.<br>
+• <code>in_array()</code> → comprueba pertenencia al conjunto válido (funciones <b>básicas</b> de PHP, no hay que memorizar nada raro).<br>
+• Devolver <code>false</code> en error <b>encaja</b> con el <code>=== false</code> del fragmento A2.
+</div>
+</details>
+
+<details>
+<summary>✅ Ver <code>generarEventos()</code> (segundo ejercicio típico: bucle anidado)</summary>
+<pre><code><span class="cmt">// $eventos: ['L'=&gt;['Reunión','Gimnasio'], 'V'=&gt;['Cine'], ...]
+// Devuelve los eventos solo de los días seleccionados.</span>
+<span class="kw">function</span> <span class="fn">generarEventos</span>(<span class="kw">array</span> <span class="var">$diasSeleccionados</span>, <span class="kw">array</span> <span class="var">$eventos</span>)
+{
+    <span class="var">$resultado</span> = [];
+    <span class="kw">foreach</span> (<span class="var">$diasSeleccionados</span> <span class="kw">as</span> <span class="var">$dia</span>) {
+        <span class="kw">if</span> (<span class="kw">isset</span>(<span class="var">$eventos</span>[<span class="var">$dia</span>])) {
+            <span class="kw">foreach</span> (<span class="var">$eventos</span>[<span class="var">$dia</span>] <span class="kw">as</span> <span class="var">$ev</span>) {
+                <span class="var">$resultado</span>[] = <span class="var">$ev</span>;
+            }
+        }
+    }
+    <span class="kw">return</span> <span class="var">$resultado</span>;
+}</code></pre>
+</details>
+</div>
+
+<div class="card replica">
+<h3>🎬 Ejercicio replicado · adaptado a tu DWES01 (formulario de películas)</h3>
+<p style="color:var(--muted);font-size:13px">Mismo patrón, pero con el dominio de tus prácticas: validar el <b>género</b> recibido contra la lista de géneros válidos.</p>
+
+<h4>FRAGMENTO A1-PCH — datos y formulario</h4>
+<pre><code><span class="cmt">// Géneros válidos (como tu constante GENEROS de DWES01)</span>
+<span class="kw">const</span> GENEROS = [<span class="str">'animación'</span>, <span class="str">'drama'</span>, <span class="str">'ciencia ficción/fantasía'</span>, <span class="str">'comedia'</span>];
+
+<span class="kw">echo</span> <span class="str">"&lt;select name='genero'&gt;"</span>;
+<span class="kw">foreach</span> (GENEROS <span class="kw">as</span> <span class="var">$g</span>) {
+    <span class="kw">echo</span> <span class="str">"&lt;option value='$g'&gt;$g&lt;/option&gt;"</span>;
+}
+<span class="kw">echo</span> <span class="str">"&lt;/select&gt;"</span>;</code></pre>
+
+<h4>FRAGMENTO A2-PCH — uso</h4>
+<pre><code><span class="var">$generoValido</span> = <span class="fn">validarGeneroRecibido</span>(GENEROS);
+
+<span class="kw">if</span> (<span class="var">$generoValido</span> === <span class="kw">false</span>) {
+    <span class="kw">echo</span> <span class="str">"El género no corresponde con uno válido."</span>;
+} <span class="kw">else</span> {
+    <span class="kw">echo</span> <span class="str">"Género seleccionado: $generoValido"</span>;
+}</code></pre>
+
+<p><b>Pide:</b> implementar <code>validarGeneroRecibido($generosValidos)</code> que devuelva el género recibido por POST <b>solo si</b> existe y está en la lista; si no, <code>false</code>.</p>
+
+<details>
+<summary>✅ Ver solución comentada</summary>
+<pre><code><span class="kw">function</span> <span class="fn">validarGeneroRecibido</span>(<span class="kw">array</span> <span class="var">$generosValidos</span>)
+{
+    <span class="cmt">// ¿Llega 'genero' por POST?</span>
+    <span class="kw">if</span> (!<span class="kw">isset</span>(<span class="var">$_POST</span>[<span class="str">'genero'</span>])) {
+        <span class="kw">return false</span>;
+    }
+
+    <span class="var">$genero</span> = <span class="kw">trim</span>(<span class="var">$_POST</span>[<span class="str">'genero'</span>]);
+
+    <span class="cmt">// ¿Está entre los válidos? (comparación exacta)</span>
+    <span class="kw">if</span> (!<span class="fn">in_array</span>(<span class="var">$genero</span>, <span class="var">$generosValidos</span>, <span class="kw">true</span>)) {
+        <span class="kw">return false</span>;
+    }
+
+    <span class="kw">return</span> <span class="var">$genero</span>;
+}</code></pre>
+<div class="note">
+Idéntico patrón al de DWES01 (<code>in_array($genero, GENEROS)</code> en tu <code>guardar.php</code>). El tercer argumento <code>true</code> de <code>in_array</code> fuerza comparación <b>estricta</b> (mismo tipo). Devolver <code>false</code> encaja con el <code>=== false</code> del fragmento de uso.
+</div>
+</details>
+</div>
+
+<div class="theory">
+<h3>📚 Teoría · PHP básico (Unidad 1)</h3>
+
+<h4>1. Recoger datos de un formulario</h4>
+<p>Los formularios envían datos por <code>$_GET</code> (querystring) o <code>$_POST</code> (cuerpo). <b>Siempre</b> hay que comprobar que el dato llega antes de usarlo:</p>
+<pre><code><span class="var">$titulo</span> = <span class="kw">isset</span>(<span class="var">$_POST</span>[<span class="str">'titulo'</span>]) ? <span class="kw">trim</span>(<span class="var">$_POST</span>[<span class="str">'titulo'</span>]) : <span class="str">''</span>;</code></pre>
+<ul>
+<li><code>isset()</code> → ¿existe y no es null? · <code>empty()</code> → ¿está vacío?</li>
+<li><code>trim()</code> → quita espacios sobrantes · <code>htmlspecialchars()</code> → evita inyección HTML al re-mostrar.</li>
+<li>Checkboxes/múltiples → <code>name="campo[]"</code> llega como <b>array</b>.</li>
+</ul>
+
+<h4>2. Arrays (lo que más se usa en todo el módulo)</h4>
+<ul>
+<li><b>Indexado:</b> <code>['Cine','Teatro']</code> · <b>Asociativo:</b> <code>['L'=&gt;'Lunes']</code>.</li>
+<li><code>in_array($v,$arr)</code> ¿está el valor? · <code>array_keys($arr)</code> claves · <code>count($arr)</code> tamaño · <code>$arr[] = $x</code> añade al final.</li>
+<li>Recorrer: <code>foreach ($arr as $clave =&gt; $valor) { ... }</code></li>
+</ul>
+
+<h4>3. Funciones y organización del código</h4>
+<p>Separar la lógica en funciones reutilizables. Tipar parámetros/retorno cuando se pueda y devolver un valor <b>coherente</b> con cómo se usa la función (p. ej. <code>false</code> en error, un array/número en éxito).</p>
+<div class="key"><b>Idea para el examen:</b> los fragmentos que te dan ya marcan el camino. Si ves <code>$x === false</code>, tu función <b>debe poder devolver false</b>. No inventes: completa para que <b>encaje</b>.</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- BLOQUE B - BASES DE DATOS -->
+<!-- ============================================ -->
+<section id="bloqueB" class="section">
+<h2>Bloque B · Bases de datos (PDO) <span class="weight">20,03%</span> <span class="tag good">Desarrollo</span></h2>
+
+<div class="note">
+<b>Formato (según repaso):</b> te dan <b>dos fragmentos</b> (uno con la <b>estructura de la BD</b> y otro de <b>PHP</b>) y debes crear una función que <b>encaje</b> con ellos. Este año las tablas estarán <b>íntimamente ligadas a tus tareas</b>: serán <b>2 de las 4</b> que manejaste (<code>peliculas</code>, <code>criticas</code>, <code>generos</code>, <code>usuarios</code>), parecidas pero no idénticas. Imprescindible: <b>consultas parametrizadas</b> y <code>try/catch</code>. El valor devuelto debe casar con el uso (p. ej. <code>rowCount()</code> si el fragmento espera nº de filas o <code>false</code>). El ejemplo de <code>coordenadas</code> es el del año pasado; tu réplica de abajo ya usa <code>peliculas</code>.
+</div>
+
+<div class="scorebar" id="sb-B" style="display:none">
+<span class="stat"><b id="b-correct">0</b> correctas · <b id="b-wrong">0</b> erróneas · <b id="b-blank">0</b> en blanco</span>
+<span class="stat">Puntuación bruta: <b id="b-score">0,00</b></span>
+<button class="reset" onclick="resetBlock('B')">Reiniciar</button>
+</div>
+
+<div class="card original">
+<h3>📄 Examen original junio 2024-2025</h3>
+
+<h4>FRAGMENTO B4 — esquema</h4>
+<pre><code><span class="kw">CREATE TABLE</span> coordenadas (
+    x <span class="kw">INTEGER not null check</span> (x&gt;=0 <span class="kw">AND</span> x&lt;16),
+    y <span class="kw">INTEGER not null check</span> (y&gt;=0 <span class="kw">AND</span> y&lt;16),
+    <span class="kw">PRIMARY KEY</span> (x,y)
+);
+<span class="kw">INSERT INTO</span> coordenadas (x,y) <span class="kw">VALUES</span> (2,5);
+<span class="kw">INSERT INTO</span> coordenadas (x,y) <span class="kw">VALUES</span> (1,9);</code></pre>
+
+<h4>FRAGMENTO B5 — uso</h4>
+<pre><code><span class="var">$pdo</span> = <span class="fn">conectarBD</span>();
+
+<span class="var">$x</span> = <span class="kw">isset</span>(<span class="var">$_GET</span>[<span class="str">'x'</span>]) ? <span class="fn">intval</span>(<span class="var">$_GET</span>[<span class="str">'x'</span>]) : <span class="kw">null</span>;
+<span class="var">$y</span> = <span class="kw">isset</span>(<span class="var">$_GET</span>[<span class="str">'y'</span>]) ? <span class="fn">intval</span>(<span class="var">$_GET</span>[<span class="str">'y'</span>]) : <span class="kw">null</span>;
+
+<span class="kw">if</span> (<span class="var">$x</span> === <span class="kw">null</span> || <span class="var">$y</span> === <span class="kw">null</span> || <span class="var">$x</span> &lt; 0 || <span class="var">$x</span> &gt; 15 || <span class="var">$y</span> &lt; 0 || <span class="var">$y</span> &gt; 15) {
+    <span class="kw">echo</span> <span class="str">"Coordenadas no válidas. Deben estar entre 0 y 15."</span>;
+    <span class="kw">exit</span>;
+}
+
+<span class="kw">if</span> (!<span class="fn">existenCoordenadas</span>(<span class="var">$pdo</span>,<span class="var">$x</span>,<span class="var">$y</span>)) {
+    <span class="var">$filasInsertadas</span>=<span class="fn">insertarCoordenadas</span>(<span class="var">$pdo</span>,<span class="var">$x</span>,<span class="var">$y</span>)
+    <span class="kw">if</span> (<span class="var">$filasInsertadas</span>===<span class="kw">false</span>)
+         <span class="kw">echo</span> <span class="str">"No se pudo insertar el registro"</span>;
+    <span class="kw">else</span>
+         <span class="kw">echo</span> <span class="str">"Filas insertadas=$filasInsertadas&lt;BR&gt;"</span>;
+}</code></pre>
+
+<p><b>Pide:</b> implementar <code>insertarCoordenadas</code> usando PDO, consultas paramétricas, try/catch y retornando un dato acorde al fragmento (false en error, nº de filas en éxito).</p>
+
+<details>
+<summary>✅ Ver solución comentada</summary>
+<pre><code><span class="cmt">/**
+ * Inserta una coordenada (x,y) en la tabla coordenadas.
+ *
+ * @param  PDO  $pdo  conexión PDO activa
+ * @param  int  $x    coordenada X (0-15)
+ * @param  int  $y    coordenada Y (0-15)
+ * @return int|false  nº de filas insertadas (1) o false si hay error
+ */</span>
+<span class="kw">function</span> <span class="fn">insertarCoordenadas</span>(<span class="kw">PDO</span> <span class="var">$pdo</span>, <span class="kw">int</span> <span class="var">$x</span>, <span class="kw">int</span> <span class="var">$y</span>)
+{
+    <span class="kw">try</span> {
+        <span class="cmt">// Consulta parametrizada (evita inyección SQL)</span>
+        <span class="var">$sql</span> = <span class="str">"INSERT INTO coordenadas (x, y) VALUES (:x, :y)"</span>;
+        <span class="var">$stmt</span> = <span class="var">$pdo</span>-&gt;<span class="fn">prepare</span>(<span class="var">$sql</span>);
+
+        <span class="cmt">// Enlace de parámetros indicando tipo INT</span>
+        <span class="var">$stmt</span>-&gt;<span class="fn">bindValue</span>(<span class="str">':x'</span>, <span class="var">$x</span>, <span class="kw">PDO</span>::<span class="var">PARAM_INT</span>);
+        <span class="var">$stmt</span>-&gt;<span class="fn">bindValue</span>(<span class="str">':y'</span>, <span class="var">$y</span>, <span class="kw">PDO</span>::<span class="var">PARAM_INT</span>);
+
+        <span class="var">$stmt</span>-&gt;<span class="fn">execute</span>();
+
+        <span class="cmt">// rowCount() = nº de filas afectadas (1 si todo OK)</span>
+        <span class="kw">return</span> <span class="var">$stmt</span>-&gt;<span class="fn">rowCount</span>();
+
+    } <span class="kw">catch</span> (<span class="kw">PDOException</span> <span class="var">$ex</span>) {
+        <span class="cmt">// El check de la tabla o el PRIMARY KEY duplicado caerán aquí.
+        // Devolvemos false como espera el fragmento B5.</span>
+        <span class="kw">return false</span>;
+    }
+}</code></pre>
+<div class="note">
+<b>Por qué este enfoque:</b><br>
+• <b>Consulta parametrizada</b> con <code>:x</code>/<code>:y</code> → protege de SQL injection.<br>
+• <b>try/catch sobre PDOException</b> → ya hay un CHECK en la tabla y un PRIMARY KEY (x,y); si se intenta insertar fuera de rango o duplicado, PDO lanza excepción.<br>
+• <b>rowCount()</b> retorna 1 si insertó, lo que encaja con <code>echo "Filas insertadas=$filasInsertadas"</code>.<br>
+• <b>return false</b> en el catch encaja con <code>if ($filasInsertadas===false)</code>.
+</div>
+</details>
+</div>
+
+<div class="card replica">
+<h3>🎬 Ejercicio replicado · adaptado a tus prácticas DWES02 / DWES03 (películas)</h3>
+
+<h4>FRAGMENTO B4-PCH — esquema de tu BD</h4>
+<pre><code><span class="kw">CREATE TABLE</span> peliculas (
+    id <span class="kw">INTEGER PRIMARY KEY AUTO_INCREMENT</span>,
+    titulo <span class="kw">VARCHAR</span>(60) <span class="kw">NOT NULL</span>,
+    genero <span class="kw">INTEGER NOT NULL</span>,
+    direccion <span class="kw">VARCHAR</span>(100) <span class="kw">NOT NULL</span>,
+    duracion <span class="kw">INTEGER NOT NULL CHECK</span> (duracion &gt; 0 <span class="kw">AND</span> duracion &lt; 500),
+    argumento <span class="kw">VARCHAR</span>(255) <span class="kw">NOT NULL</span>,
+    anio <span class="kw">INTEGER NOT NULL CHECK</span> (anio &gt; 1960),
+    <span class="kw">FOREIGN KEY</span> (genero) <span class="kw">REFERENCES</span> generos(id)
+);</code></pre>
+
+<h4>FRAGMENTO B5-PCH — script que la usa</h4>
+<pre><code><span class="var">$pdo</span> = <span class="fn">conectarBD</span>();
+
+<span class="var">$titulo</span>   = <span class="fn">filter_input</span>(<span class="kw">INPUT_POST</span>, <span class="str">'titulo'</span>, <span class="kw">FILTER_SANITIZE_SPECIAL_CHARS</span>);
+<span class="var">$genero</span>   = <span class="fn">filter_input</span>(<span class="kw">INPUT_POST</span>, <span class="str">'genero'</span>, <span class="kw">FILTER_VALIDATE_INT</span>);
+<span class="var">$direccion</span>= <span class="fn">filter_input</span>(<span class="kw">INPUT_POST</span>, <span class="str">'direccion'</span>, <span class="kw">FILTER_SANITIZE_SPECIAL_CHARS</span>);
+<span class="var">$duracion</span> = <span class="fn">filter_input</span>(<span class="kw">INPUT_POST</span>, <span class="str">'duracion'</span>, <span class="kw">FILTER_VALIDATE_INT</span>);
+<span class="var">$argumento</span>= <span class="fn">filter_input</span>(<span class="kw">INPUT_POST</span>, <span class="str">'argumento'</span>, <span class="kw">FILTER_SANITIZE_SPECIAL_CHARS</span>);
+<span class="var">$anio</span>     = <span class="fn">filter_input</span>(<span class="kw">INPUT_POST</span>, <span class="str">'anio'</span>, <span class="kw">FILTER_VALIDATE_INT</span>);
+
+<span class="kw">if</span> (!<span class="var">$titulo</span> || !<span class="var">$genero</span> || !<span class="var">$direccion</span> || !<span class="var">$duracion</span> || !<span class="var">$argumento</span> || !<span class="var">$anio</span>) {
+    <span class="kw">echo</span> <span class="str">"Datos incompletos o no válidos."</span>;
+    <span class="kw">exit</span>;
+}
+
+<span class="var">$datos</span> = <span class="kw">compact</span>(<span class="str">'titulo'</span>,<span class="str">'genero'</span>,<span class="str">'direccion'</span>,<span class="str">'duracion'</span>,<span class="str">'argumento'</span>,<span class="str">'anio'</span>);
+<span class="var">$idNuevo</span> = <span class="fn">insertarPelicula</span>(<span class="var">$pdo</span>, <span class="var">$datos</span>);
+
+<span class="kw">if</span> (<span class="var">$idNuevo</span> === <span class="kw">false</span>)
+    <span class="kw">echo</span> <span class="str">"No se pudo insertar la película"</span>;
+<span class="kw">else</span>
+    <span class="kw">echo</span> <span class="str">"Película insertada con id=$idNuevo"</span>;</code></pre>
+
+<p><b>Pide:</b> implementa <code>insertarPelicula($pdo, $datos)</code> usando PDO, consultas paramétricas, try/catch y retornando el id generado (o false).</p>
+
+<details>
+<summary>✅ Ver solución (basada en tu DWES02 dao-peliculas.php)</summary>
+<pre><code><span class="cmt">/**
+ * Inserta una nueva película.
+ *
+ * @param  PDO   $pdo    conexión PDO
+ * @param  array $datos  ['titulo','genero','direccion','duracion','argumento','anio']
+ * @return int|false     ID generado por AUTO_INCREMENT, o false en error
+ */</span>
+<span class="kw">function</span> <span class="fn">insertarPelicula</span>(<span class="kw">PDO</span> <span class="var">$pdo</span>, <span class="kw">array</span> <span class="var">$datos</span>)
+{
+    <span class="kw">try</span> {
+        <span class="var">$sql</span> = <span class="str">"INSERT INTO peliculas
+                (titulo, genero, direccion, duracion, argumento, anio)
+                VALUES (:titulo, :genero, :direccion, :duracion, :argumento, :anio)"</span>;
+
+        <span class="var">$stmt</span> = <span class="var">$pdo</span>-&gt;<span class="fn">prepare</span>(<span class="var">$sql</span>);
+
+        <span class="var">$stmt</span>-&gt;<span class="fn">bindValue</span>(<span class="str">':titulo'</span>,    <span class="var">$datos</span>[<span class="str">'titulo'</span>],    <span class="kw">PDO</span>::<span class="var">PARAM_STR</span>);
+        <span class="var">$stmt</span>-&gt;<span class="fn">bindValue</span>(<span class="str">':genero'</span>,    <span class="var">$datos</span>[<span class="str">'genero'</span>],    <span class="kw">PDO</span>::<span class="var">PARAM_INT</span>);
+        <span class="var">$stmt</span>-&gt;<span class="fn">bindValue</span>(<span class="str">':direccion'</span>, <span class="var">$datos</span>[<span class="str">'direccion'</span>], <span class="kw">PDO</span>::<span class="var">PARAM_STR</span>);
+        <span class="var">$stmt</span>-&gt;<span class="fn">bindValue</span>(<span class="str">':duracion'</span>,  <span class="var">$datos</span>[<span class="str">'duracion'</span>],  <span class="kw">PDO</span>::<span class="var">PARAM_INT</span>);
+        <span class="var">$stmt</span>-&gt;<span class="fn">bindValue</span>(<span class="str">':argumento'</span>, <span class="var">$datos</span>[<span class="str">'argumento'</span>], <span class="kw">PDO</span>::<span class="var">PARAM_STR</span>);
+        <span class="var">$stmt</span>-&gt;<span class="fn">bindValue</span>(<span class="str">':anio'</span>,      <span class="var">$datos</span>[<span class="str">'anio'</span>],      <span class="kw">PDO</span>::<span class="var">PARAM_INT</span>);
+
+        <span class="var">$stmt</span>-&gt;<span class="fn">execute</span>();
+
+        <span class="cmt">// lastInsertId devuelve el id que MySQL acaba de auto-generar.</span>
+        <span class="kw">return</span> (<span class="kw">int</span>) <span class="var">$pdo</span>-&gt;<span class="fn">lastInsertId</span>();
+
+    } <span class="kw">catch</span> (<span class="kw">PDOException</span> <span class="var">$ex</span>) {
+        <span class="kw">return false</span>;
+    }
+}</code></pre>
+<div class="note">
+<b>Variantes a saber por si te lo cambian:</b><br>
+• Si te piden <b>"devolver el nº de filas modificadas"</b> → <code>return $stmt-&gt;rowCount();</code> (como en B del original).<br>
+• Si te piden <b>UPDATE</b> → cambia el SQL y devuelve <code>$stmt-&gt;rowCount()</code>.<br>
+• Si te piden <b>DELETE</b> → igual: <code>rowCount()</code>.<br>
+• Si te piden <b>SELECT</b> → usa <code>$stmt-&gt;fetchAll(PDO::FETCH_ASSOC)</code> y en el catch devuelve <code>false</code> o <code>[]</code>.
+</div>
+</details>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+<h3>🧠 Repaso teórico (PDO básico)</h3>
+<p style="color:var(--muted);font-size:13px">Preguntas conceptuales para reforzar fundamentos. Mismo sistema de corrección (−¼ por fallo en simulacro).</p>
+<div id="quizB_extra"></div>
+</div>
+
+<div class="theory">
+<h3>📚 Teoría · Bases de datos con PDO</h3>
+
+<h4>1. ¿Qué es PDO y por qué se usa?</h4>
+<p>PDO (<b>PHP Data Objects</b>) es la <b>capa de abstracción de bases de datos</b> oficial de PHP. Permite conectarse a múltiples motores (MySQL, PostgreSQL, SQLite, Oracle...) usando siempre la <b>misma API</b>. Si mañana cambias de MySQL a PostgreSQL, solo cambias el DSN.</p>
+<p>Ventajas frente a las funciones antiguas (<code>mysql_*</code>, deprecadas) o <code>mysqli</code>:</p>
+<ul>
+<li><b>Consultas preparadas</b> nativas → previenen inyección SQL.</li>
+<li><b>Manejo de errores con excepciones</b> (PDOException) en lugar de comprobar <code>false</code> a cada paso.</li>
+<li><b>API uniforme</b> entre motores.</li>
+</ul>
+
+<h4>2. El DSN (Data Source Name)</h4>
+<p>El DSN es la cadena que le dice a PDO <i>a qué base de datos conectarse</i>. Estructura:</p>
+<pre><code>driver:host=HOST;port=PUERTO;dbname=BD;charset=CHARSET</code></pre>
+<p>Ejemplo (de tu DWES02):</p>
+<pre><code>mysql:host=localhost;port=3306;dbname=dwes02;charset=utf8mb4</code></pre>
+<p>Constructor: <code>new PDO($dsn, $usuario, $password, $opciones)</code>.</p>
+
+<h4>3. Configuración correcta de la conexión</h4>
+<pre><code>$pdo = new PDO($dsn, DB_USER, DB_PASS, [
+    PDO::ATTR_ERRMODE            =&gt; PDO::ERRMODE_EXCEPTION,    // Lanza excepciones ante errores
+    PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,           // fetch() devuelve array asociativo
+    PDO::ATTR_EMULATE_PREPARES   =&gt; false                       // Prepared statements reales del driver
+]);</code></pre>
+<div class="key"><b>Clave:</b> <code>ERRMODE_EXCEPTION</code> es la opción más importante. Sin ella, los errores SQL se ignoran silenciosamente (PDO devuelve <code>false</code> y tú no te enteras).</div>
+
+<h4>4. Consultas preparadas — el corazón de PDO</h4>
+<p>Una consulta preparada separa el <b>SQL</b> de los <b>datos</b>. El SQL se compila una vez, y los datos se "atan" después como parámetros, nunca se interpolan en el SQL.</p>
+<h5>Con parámetros con nombre (recomendado, más legible)</h5>
+<pre><code>$sql = "SELECT * FROM peliculas WHERE anio = :anio AND genero = :gen";
+$stmt = $pdo-&gt;prepare($sql);
+$stmt-&gt;bindValue(':anio', $anio, PDO::PARAM_INT);
+$stmt-&gt;bindValue(':gen',  $gen,  PDO::PARAM_INT);
+$stmt-&gt;execute();</code></pre>
+<h5>Con parámetros posicionales</h5>
+<pre><code>$stmt = $pdo-&gt;prepare("SELECT * FROM peliculas WHERE anio = ? AND genero = ?");
+$stmt-&gt;execute([$anio, $gen]);   // ¡Forma compacta!</code></pre>
+
+<h4>5. bindParam vs bindValue</h4>
+<ul>
+<li><b><code>bindParam(':x', $var)</code>:</b> liga la <i>variable</i> por referencia. El valor que tenga <code>$var</code> en el momento de <code>execute()</code> es el que se usa.</li>
+<li><b><code>bindValue(':x', 5)</code>:</b> liga el <i>valor</i> en ese instante. Aunque la variable cambie después, el valor ligado no.</li>
+</ul>
+<p>En la práctica, para inserciones puntuales <code>bindValue</code> suele ser más claro. <code>bindParam</code> es útil dentro de bucles donde reutilizas la sentencia y solo cambia la variable.</p>
+
+<h4>6. Leer resultados</h4>
+<ul>
+<li><b><code>fetch()</code>:</b> una fila cada vez. Devuelve <code>false</code> cuando no hay más. Ideal para bucles <code>while</code>.</li>
+<li><b><code>fetchAll()</code>:</b> todas las filas a la vez en una matriz. Cómodo, pero gasta memoria si la tabla es enorme.</li>
+<li><b><code>fetchColumn()</code>:</b> un solo valor (la primera columna de la primera fila). Útil para <code>COUNT(*)</code>, <code>SUM(...)</code>, etc.</li>
+</ul>
+<p>Modos de fetch: <code>PDO::FETCH_ASSOC</code> (claves de texto), <code>FETCH_NUM</code> (claves numéricas), <code>FETCH_BOTH</code> (las dos, por defecto), <code>FETCH_OBJ</code> (objeto stdClass), <code>FETCH_CLASS</code> (clase concreta).</p>
+
+<h4>7. INSERT, UPDATE, DELETE — métodos clave</h4>
+<ul>
+<li><code>$pdo-&gt;lastInsertId()</code> → el AUTO_INCREMENT que MySQL generó tras el último INSERT en esa conexión.</li>
+<li><code>$stmt-&gt;rowCount()</code> → nº de filas afectadas. Útil para saber si UPDATE/DELETE realmente cambió algo.</li>
+</ul>
+
+<h4>8. Manejo de errores con try/catch</h4>
+<pre><code>try {
+    $stmt = $pdo-&gt;prepare($sql);
+    $stmt-&gt;execute([$valor]);
+    return $stmt-&gt;rowCount();
+} catch (PDOException $ex) {
+    error_log('Error BD: '.$ex-&gt;getMessage());
+    return false;   // o lo que espere quien llama
+}</code></pre>
+<div class="warn"><b>Cuidado:</b> el mensaje de error de PDOException puede contener información sensible (estructura de tablas, queries...). NUNCA lo muestres al usuario final. Registra con <code>error_log()</code>.</div>
+
+<h4>9. Transacciones (cuando varias operaciones deben ser atómicas)</h4>
+<pre><code>$pdo-&gt;beginTransaction();
+try {
+    $pdo-&gt;exec("UPDATE cuentas SET saldo = saldo - 100 WHERE id = 1");
+    $pdo-&gt;exec("UPDATE cuentas SET saldo = saldo + 100 WHERE id = 2");
+    $pdo-&gt;commit();   // Todo OK: confirma
+} catch (PDOException $e) {
+    $pdo-&gt;rollBack(); // Algo falló: revierte ambas operaciones
+}</code></pre>
+
+<h4>10. Cosas que NUNCA debes hacer</h4>
+<ul>
+<li><b>Concatenar datos en el SQL:</b> <code>"SELECT * FROM peliculas WHERE id = $id"</code> ← inyección SQL.</li>
+<li><b>Usar <code>addslashes()</code> en lugar de prepared statements:</b> no protege en todos los charsets.</li>
+<li><b>Devolver mensajes de excepción al cliente:</b> filtran información sensible.</li>
+<li><b>Olvidar el catch de PDOException:</b> si está activo ERRMODE_EXCEPTION, una excepción no capturada tumba el script con un error visible.</li>
+</ul>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- BLOQUE C - SESIONES -->
+<!-- ============================================ -->
+<section id="bloqueC" class="section">
+<h2>Bloque C · Sesiones <span class="weight">15,67%</span> <span class="tag good">Desarrollo</span></h2>
+
+<div class="note">
+<b>Formato (según repaso):</b> ejercicio de <b>desarrollo</b> con un <b>fragmento de código + un enunciado corto</b>. Va <b>mucho más al grano que en febrero</b>: la lógica ya viene casi dada y solo tienes que fijarte en un par de detalles del uso de <b>sesiones</b> (<code>session_start()</code>, leer/escribir en <code>$_SESSION</code>). Lo imprescindible es que <b>se vea bien el manejo de la sesión</b>.
+</div>
+
+<div class="scorebar" id="sb-C" style="display:none">
+<span class="stat"><b id="c-correct">0</b> correctas · <b id="c-wrong">0</b> erróneas · <b id="c-blank">0</b> en blanco</span>
+<span class="stat">Puntuación bruta: <b id="c-score">0,00</b></span>
+<button class="reset" onclick="resetBlock('C')">Reiniciar</button>
+</div>
+
+<div class="card original">
+<h3>📄 Examen original junio 2024-2025</h3>
+
+<h4>FRAGMENTO C6</h4>
+<pre><code>&lt;?<span class="kw">php</span>
+<span class="fn">session_start</span>();
+
+<span class="var">$numero</span> = <span class="kw">false</span>;
+<span class="kw">if</span> (<span class="kw">isset</span>(<span class="var">$_GET</span>[<span class="str">'numero'</span>]) &amp;&amp; <span class="fn">is_numeric</span>(<span class="var">$_GET</span>[<span class="str">'numero'</span>]))
+    <span class="var">$numero</span> = <span class="var">$_GET</span>[<span class="str">'numero'</span>];
+<span class="var">$suma</span> = <span class="fn">calcular</span>(<span class="var">$numero</span>);
+?&gt;
+&lt;h2&gt;Introduce un número&lt;/h2&gt;
+&lt;form method="GET"&gt;
+    &lt;input type="text" name="numero"&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+&lt;p&gt;La suma de los números actuales almacenados en la sesión es &lt;?= <span class="var">$suma</span> ?&gt;&lt;/p&gt;</code></pre>
+
+<p><b>Pide:</b> implementar <code>calcular($numero)</code>: guarda hasta 5 números en la sesión (clave <code>numeros</code>). Si llega un nº nuevo y ya hay 5, borra el más antiguo. Siempre retorna la suma.</p>
+
+<details>
+<summary>✅ Ver solución comentada</summary>
+<pre><code><span class="cmt">/**
+ * Mantiene un máximo de 5 números en $_SESSION['numeros'] (FIFO)
+ * y devuelve siempre la suma actual.
+ *
+ * @param int|false $numero  número entero o false (no añadir)
+ * @return int               suma actual
+ */</span>
+<span class="kw">function</span> <span class="fn">calcular</span>(<span class="var">$numero</span>): <span class="kw">int</span>
+{
+    <span class="cmt">// 1. Si no existe la clave en sesión, inicializar a array vacío</span>
+    <span class="kw">if</span> (!<span class="kw">isset</span>(<span class="var">$_SESSION</span>[<span class="str">'numeros'</span>])) {
+        <span class="var">$_SESSION</span>[<span class="str">'numeros'</span>] = [];
+    }
+
+    <span class="cmt">// 2. Si hemos recibido un número válido (no false), lo añadimos</span>
+    <span class="kw">if</span> (<span class="var">$numero</span> !== <span class="kw">false</span>) {
+
+        <span class="cmt">// Si ya hay 5 o más, quitamos el más antiguo (primer elemento)</span>
+        <span class="kw">if</span> (<span class="fn">count</span>(<span class="var">$_SESSION</span>[<span class="str">'numeros'</span>]) &gt;= 5) {
+            <span class="fn">array_shift</span>(<span class="var">$_SESSION</span>[<span class="str">'numeros'</span>]);
+        }
+
+        <span class="cmt">// Añadimos el nuevo al final</span>
+        <span class="var">$_SESSION</span>[<span class="str">'numeros'</span>][] = (<span class="kw">int</span>) <span class="var">$numero</span>;
+    }
+
+    <span class="cmt">// 3. Devolver siempre la suma actual</span>
+    <span class="kw">return</span> <span class="fn">array_sum</span>(<span class="var">$_SESSION</span>[<span class="str">'numeros'</span>]);
+}</code></pre>
+<div class="note">
+<b>Puntos clave que evalúan:</b><br>
+• Inicializar el array si la clave no existe (<code>if (!isset(...))</code>).<br>
+• <code>array_shift</code> elimina el primero (más antiguo) — <b>antes</b> de añadir el nuevo, no después.<br>
+• Manejar el caso <code>$numero === false</code> (no se añade pero sí se devuelve la suma).<br>
+• <code>array_sum</code> sobre array vacío devuelve 0 → cubre el caso "sin números".
+</div>
+</details>
+</div>
+
+<div class="card replica">
+<h3>🎬 Ejercicio replicado · adaptado a tu DWES03 (votaciones de películas)</h3>
+
+<h4>FRAGMENTO C6-PCH</h4>
+<pre><code>&lt;?<span class="kw">php</span>
+<span class="fn">session_start</span>();
+<span class="kw">require_once</span> <span class="str">'accesoareaprivada.php'</span>; <span class="cmt">// te asegura que $_SESSION['user'] existe</span>
+
+<span class="var">$id_pelicula</span> = <span class="kw">false</span>;
+<span class="kw">if</span> (<span class="kw">isset</span>(<span class="var">$_GET</span>[<span class="str">'id_pelicula'</span>]) &amp;&amp; <span class="fn">is_numeric</span>(<span class="var">$_GET</span>[<span class="str">'id_pelicula'</span>])) {
+    <span class="var">$id_pelicula</span> = (<span class="kw">int</span>) <span class="var">$_GET</span>[<span class="str">'id_pelicula'</span>];
+}
+<span class="var">$total</span> = <span class="fn">registrarVistaPelicula</span>(<span class="var">$id_pelicula</span>);
+?&gt;
+&lt;h2&gt;Histórico de las últimas 10 películas vistas&lt;/h2&gt;
+&lt;p&gt;Has visto un total de &lt;?= <span class="var">$total</span> ?&gt; películas registradas en esta sesión.&lt;/p&gt;</code></pre>
+
+<p><b>Pide:</b> implementa <code>registrarVistaPelicula($id_pelicula)</code> que guarda hasta 10 ids únicos en <code>$_SESSION['historico_peliculas']</code>. Si llega un id nuevo y ya hay 10, elimina el más antiguo. Si el id ya está en el histórico, lo ignora (no duplica). Siempre devuelve el total actual.</p>
+
+<details>
+<summary>✅ Ver solución</summary>
+<pre><code><span class="kw">function</span> <span class="fn">registrarVistaPelicula</span>(<span class="var">$id_pelicula</span>): <span class="kw">int</span>
+{
+    <span class="cmt">// 1. Inicializar la clave si no existe</span>
+    <span class="kw">if</span> (!<span class="kw">isset</span>(<span class="var">$_SESSION</span>[<span class="str">'historico_peliculas'</span>])) {
+        <span class="var">$_SESSION</span>[<span class="str">'historico_peliculas'</span>] = [];
+    }
+
+    <span class="cmt">// 2. Si recibimos un id válido y no está ya almacenado, lo añadimos</span>
+    <span class="kw">if</span> (<span class="var">$id_pelicula</span> !== <span class="kw">false</span> &amp;&amp; !<span class="fn">in_array</span>(<span class="var">$id_pelicula</span>, <span class="var">$_SESSION</span>[<span class="str">'historico_peliculas'</span>])) {
+
+        <span class="cmt">// FIFO: si ya hay 10, quitamos el más antiguo antes de añadir</span>
+        <span class="kw">if</span> (<span class="fn">count</span>(<span class="var">$_SESSION</span>[<span class="str">'historico_peliculas'</span>]) &gt;= 10) {
+            <span class="fn">array_shift</span>(<span class="var">$_SESSION</span>[<span class="str">'historico_peliculas'</span>]);
+        }
+
+        <span class="var">$_SESSION</span>[<span class="str">'historico_peliculas'</span>][] = (<span class="kw">int</span>) <span class="var">$id_pelicula</span>;
+    }
+
+    <span class="kw">return</span> <span class="fn">count</span>(<span class="var">$_SESSION</span>[<span class="str">'historico_peliculas'</span>]);
+}</code></pre>
+<div class="note">
+<b>Variantes que pueden preguntar:</b><br>
+• "Cerrar sesión" → <code>session_unset(); session_destroy();</code><br>
+• "Comprobar que el usuario está logueado" → en tu DWES03 <code>accesoareaprivada.php</code>: <code>if (!isset($_SESSION['user'])) { header('Location: ../login/form-login.php'); exit; }</code><br>
+• "Control de inactividad" → <code>if (time() - $_SESSION['user']['ultimoacceso'] &gt; 1800) session_destroy();</code>
+</div>
+</details>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+<h3>🧠 Repaso teórico (Sesiones y cookies)</h3>
+<p style="color:var(--muted);font-size:13px">Conceptos fundamentales sobre sesiones, cookies y seguridad.</p>
+<div id="quizC_extra"></div>
+</div>
+
+<div class="theory">
+<h3>📚 Teoría · Sesiones y Cookies</h3>
+
+<h4>1. El problema que resuelven</h4>
+<p>HTTP es un protocolo <b>sin estado</b>: cada petición es independiente, el servidor no recuerda nada de peticiones anteriores. Para que una web sepa <b>"este usuario está logueado"</b>, "ha añadido X al carrito" o "su idioma preferido es ES", necesitamos algún mecanismo de persistencia entre peticiones. Para eso existen las <b>cookies</b> y las <b>sesiones</b>.</p>
+
+<h4>2. Cookie vs Sesión — la diferencia clave</h4>
+<table>
+<tr><th>Cookie</th><th>Sesión</th></tr>
+<tr><td>Vive en el <b>navegador</b> (lado cliente)</td><td>Vive en el <b>servidor</b> (archivo o BD)</td></tr>
+<tr><td>Visible y editable por el usuario</td><td>Inaccesible para el usuario</td></tr>
+<tr><td>Se envía en CADA petición (cabecera <code>Cookie:</code>)</td><td>El cliente solo envía el id de sesión (<code>PHPSESSID</code>)</td></tr>
+<tr><td>Tamaño limitado (~4KB)</td><td>Sin límite práctico</td></tr>
+<tr><td>Para preferencias no sensibles (idioma, tema...)</td><td>Para datos sensibles (login, carrito...)</td></tr>
+</table>
+<div class="key"><b>Idea clave:</b> incluso al usar sesiones, hay UNA cookie por debajo: <code>PHPSESSID=abc123...</code>. Esa cookie SOLO contiene el id; los datos reales están en el servidor en <code>/tmp/sess_abc123...</code>.</div>
+
+<h4>3. Sesiones en PHP — flujo básico</h4>
+<pre><code>// 1. Iniciar la sesión (antes de cualquier salida)
+session_start();
+
+// 2. Leer/escribir como cualquier array
+$_SESSION['user_id'] = 42;
+$_SESSION['login']   = 'pablo';
+$_SESSION['carrito'] = ['pelicula_1','pelicula_5'];
+
+// 3. Más tarde, en otra página:
+session_start();
+echo $_SESSION['login'];   // 'pablo'</code></pre>
+<div class="warn"><b>session_start() DEBE llamarse antes de cualquier output</b> (echo, espacios fuera de <code>&lt;?php</code>, etc.). PHP necesita enviar la cabecera <code>Set-Cookie</code> con el PHPSESSID; si ya hay output, las cabeceras están enviadas → warning "headers already sent".</div>
+
+<h4>4. Cerrar sesión correctamente</h4>
+<pre><code>session_start();
+$_SESSION = [];                  // 1. Vaciar el array en memoria
+session_unset();                  // 2. (redundante, pero por costumbre)
+session_destroy();                // 3. Destruir el archivo del servidor
+
+// 4. (Opcional) borrar la cookie PHPSESSID del navegador
+if (ini_get("session.use_cookies")) {
+    $p = session_get_cookie_params();
+    setcookie(session_name(), '', time()-42000, $p["path"], $p["domain"], $p["secure"], $p["httponly"]);
+}</code></pre>
+
+<h4>5. Cookies en PHP</h4>
+<pre><code>// Crear/actualizar una cookie
+setcookie(
+    'tema_preferido',     // nombre
+    'oscuro',             // valor
+    time() + 60*60*24*30, // expiración (timestamp Unix) — 30 días
+    '/',                  // path (a qué rutas se envía)
+    '',                   // domain (vacío = dominio actual)
+    true,                 // secure → solo se envía por HTTPS
+    true                  // httponly → no accesible desde JavaScript
+);
+
+// Leer
+echo $_COOKIE['tema_preferido'] ?? 'claro';
+
+// Borrar (poniendo expiración en el pasado)
+setcookie('tema_preferido', '', time() - 3600, '/');</code></pre>
+<div class="key"><b>Flags de seguridad importantes:</b>
+<ul>
+<li><b>HttpOnly</b> → JS (<code>document.cookie</code>) NO puede leer la cookie. Mitiga XSS.</li>
+<li><b>Secure</b> → la cookie solo se envía por HTTPS, nunca por HTTP claro.</li>
+<li><b>SameSite=Strict/Lax</b> → mitiga CSRF (la cookie no se envía en requests cross-site).</li>
+</ul>
+</div>
+
+<h4>6. Seguridad: session fixation y session_regenerate_id</h4>
+<p><b>Ataque:</b> un atacante consigue que la víctima use un PHPSESSID que él conoce (p. ej. pasándolo por URL). Cuando la víctima se loguea, el atacante ya tiene su sesión.</p>
+<p><b>Defensa:</b> al iniciar sesión exitosamente, <b>regenerar el id</b>:</p>
+<pre><code>// Después de validar usuario y contraseña:
+session_regenerate_id(true);   // true = destruye la sesión vieja
+$_SESSION['user_id'] = $id;</code></pre>
+
+<h4>7. Control de inactividad</h4>
+<p>Cerrar sesión automáticamente tras X minutos sin actividad:</p>
+<pre><code>session_start();
+$inactividad_max = 30 * 60;  // 30 minutos
+
+if (isset($_SESSION['ultimoacceso']) &amp;&amp; time() - $_SESSION['ultimoacceso'] &gt; $inactividad_max) {
+    session_unset();
+    session_destroy();
+    header('Location: login.php?expirado=1');
+    exit;
+}
+$_SESSION['ultimoacceso'] = time();  // Actualizar marca de tiempo</code></pre>
+<p>(En tu DWES03 lo aplicas justamente así.)</p>
+
+<h4>8. Hashing de contraseñas (relacionado: nunca guardes la pwd en claro)</h4>
+<pre><code>// Al registrar:
+$hash = password_hash($passwordPlano, PASSWORD_DEFAULT);
+// Guardar $hash en BD (60 chars, bcrypt por defecto)
+
+// Al hacer login:
+$usuario = ... // SELECT password FROM usuarios WHERE login = ?
+if (password_verify($passwordIntroducido, $usuario['password'])) {
+    // Correcto
+}</code></pre>
+
+<h4>9. Configuración relevante de php.ini (saber que existe)</h4>
+<ul>
+<li><code>session.cookie_lifetime</code> → duración de la cookie PHPSESSID (0 = sesión del navegador).</li>
+<li><code>session.gc_maxlifetime</code> → tiempo de vida de los datos en el servidor.</li>
+<li><code>session.cookie_httponly</code> = 1, <code>session.cookie_secure</code> = 1 → seguridad por defecto.</li>
+</ul>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- BLOQUE D - COMPOSER / NAMESPACES / MVC / SMARTY -->
+<!-- ============================================ -->
+<section id="bloqueD" class="section">
+<h2>Bloque D · Composer / Namespaces / MVC / Smarty <span class="weight">8%</span> <span class="tag good">Respuesta corta</span></h2>
+
+<div class="note" style="border-left-color:var(--accent2)">
+<b>⚠️ Cambio importante este año:</b> el bloque D <b>NO es tipo test</b> (el año pasado sí lo era). Son <b>preguntas de respuesta corta</b>: cuando hay que escribir código son <b>1–2 líneas como mucho</b>, y algunas se contestan explicando con tus palabras (también 1–2 líneas). <b>No penaliza</b> por fallo. Pesa solo un 8%, <b>pero entender esta unidad es la base de las U5, U6 y U7</b>. Gran parte de las preguntas van sobre <b>entender el patrón MVC</b> en general.
+</div>
+
+<div class="card replica">
+<h3>✍️ Práctica con el formato real (respuesta corta)</h3>
+<p style="color:var(--muted);font-size:13px">Intenta responder mentalmente (1–2 líneas) y pulsa para comprobar. Es justo el tipo de pregunta que describieron los profesores.</p>
+
+<details>
+<summary>D-RC1. ¿Qué comando de Composer instala las dependencias de un proyecto cuando <b>no existe</b> la carpeta <code>vendor</code> (ya tienes el <code>composer.json</code>)?</summary>
+<p><code>composer install</code> (lee <code>composer.json</code>/<code>composer.lock</code> y descarga todo en <code>vendor/</code>, generando el autoload).</p>
+</details>
+
+<details>
+<summary>D-RC2. Nombra los comandos básicos de Composer que usaste y para qué sirven.</summary>
+<p><code>composer init</code> → crea el <code>composer.json</code>. · <code>composer require vendor/paquete</code> → añade e instala una dependencia. · <code>composer install</code> → instala lo declarado. · <code>composer dump-autoload</code> → regenera el autoload.</p>
+</details>
+
+<details>
+<summary>D-RC3. En el <code>composer.json</code>, ¿cómo asocias el namespace <code>PCH\</code> a la carpeta <code>src/</code> (PSR-4)?</summary>
+<pre><code><span class="str">"autoload"</span>: { <span class="str">"psr-4"</span>: { <span class="str">"PCH\\"</span>: <span class="str">"src/"</span> } }</code></pre>
+<p>Tras editarlo hay que ejecutar <code>composer dump-autoload</code>.</p>
+</details>
+
+<details>
+<summary>D-RC4. ¿Para qué sirve <code>require __DIR__.'/vendor/autoload.php'</code>?</summary>
+<p>Carga el <b>autoload</b> de Composer: a partir de ahí las clases se cargan <b>solas</b> (carga dinámica) según su namespace, sin <code>require</code> manual de cada archivo.</p>
+</details>
+
+<details>
+<summary>D-RC5. Declara el namespace de una clase <code>Pelicula</code> situada en <code>src/modelo/</code> y úsala desde otro archivo.</summary>
+<pre><code><span class="cmt">// src/modelo/Pelicula.php</span>
+<span class="kw">namespace</span> PCH\modelo;
+<span class="kw">class</span> Pelicula { <span class="cmt">/* ... */</span> }
+
+<span class="cmt">// en otro archivo</span>
+<span class="kw">use</span> PCH\modelo\Pelicula;</code></pre>
+</details>
+
+<details>
+<summary>D-RC6. En el patrón MVC, ¿qué responsabilidad tiene cada parte?</summary>
+<p><b>Modelo</b> = datos y acceso a BD. <b>Vista</b> = presentación (Smarty/Blade). <b>Controlador</b> = recibe la petición, valida, usa el modelo y elige la vista/respuesta. Cada cosa tiene una función concreta.</p>
+</details>
+
+<details>
+<summary>D-RC7. En Smarty, ¿cómo proyectas (muestras) el valor de la variable <code>$resultado</code> en la plantilla?</summary>
+<p><code>{$resultado}</code>. (El equivalente en Blade sería <code>{{ $resultado }}</code>; las llaves dobles <b>no</b> son válidas en Smarty.)</p>
+</details>
+
+<details>
+<summary>D-RC8. ¿Por qué se sacan las consultas a BD a archivos/clases aparte en las funciones controladoras?</summary>
+<p>Para mantener la <b>separación de responsabilidades</b> del patrón MVC: el controlador coordina, pero el acceso a datos vive en el modelo. Así el código es más mantenible y reutilizable.</p>
+</details>
+</div>
+
+<div class="card original">
+<h3>📄 Cuestionario del año pasado (era tipo test) — útil como repaso de conceptos</h3>
+<p style="color:var(--muted);font-size:13px">El año pasado este bloque era tipo test. Estas preguntas siguen sirviendo para fijar conceptos, pero recuerda que <b>este año responderás por escrito</b> (sin opciones). Es un auto-test orientativo, sin penalización.</p>
+
+<h4>FRAGMENTO D1 — composer.json</h4>
+<pre><code>{
+    <span class="str">"require"</span>: {
+        <span class="str">"smarty/smarty"</span>: <span class="str">"^4.4.1"</span>
+    },
+    <span class="str">"autoload"</span>: {
+        <span class="str">"psr-4"</span>: { <span class="str">"EX\\\\"</span>: <span class="str">"src/"</span> }
+    }
+}</code></pre>
+
+<h4>FRAGMENTO D2 — index.php (controlador raíz)</h4>
+<pre><code><span class="kw">require</span> __DIR__.<span class="str">'/vendor/autoload.php'</span>;
+
+<span class="kw">use</span> EX\ctxls\extra\Operaciones;
+
+<span class="var">$pdo</span> = <span class="kw">require</span> __DIR__.<span class="str">'/conectarbd.php'</span>;
+
+<span class="var">$smarty</span> = <span class="kw">new</span> Smarty;
+<span class="var">$smarty</span>-&gt;<span class="fn">setTemplateDir</span>(__DIR__.<span class="str">'/res/templates'</span>);
+<span class="var">$smarty</span>-&gt;<span class="fn">setCompileDir</span>(__DIR__.<span class="str">'/res/compiled_templates'</span>);
+
+<span class="kw">switch</span> (<span class="var">$_GET</span>[<span class="str">'op'</span>]??<span class="str">''</span>) {
+    <span class="kw">case</span> <span class="str">'suma'</span>:   Operaciones::<span class="fn">sumar</span>(<span class="var">$smarty</span>); <span class="kw">break</span>;
+    <span class="kw">case</span> <span class="str">'restar'</span>: Operaciones::<span class="fn">restar</span>(<span class="var">$smarty</span>); <span class="kw">break</span>;
+    <span class="kw">default</span>:        Test::<span class="fn">form</span>(<span class="var">$smarty</span>); <span class="kw">break</span>;
+}</code></pre>
+
+<h4>FRAGMENTO D3 — Operaciones.php</h4>
+<pre><code><span class="kw">use</span> EX\mdl\Calculadora;
+
+<span class="kw">class</span> Operaciones
+{
+    <span class="kw">public static function</span> <span class="fn">sumar</span>(\Smarty <span class="var">$smarty</span>) { <span class="cmt">/*...*/</span> }
+
+    <span class="kw">public static function</span> <span class="fn">restar</span>(\Smarty <span class="var">$smarty</span>)
+    {
+        <span class="var">$a</span> = <span class="fn">filter_input</span>(<span class="kw">INPUT_POST</span>,<span class="str">'a'</span>);
+        <span class="var">$b</span> = <span class="fn">filter_input</span>(<span class="kw">INPUT_POST</span>,<span class="str">'b'</span>);
+        <span class="kw">if</span> (<span class="var">$a</span> &amp;&amp; <span class="var">$b</span> &amp;&amp; <span class="fn">is_numeric</span>(<span class="var">$a</span>) &amp;&amp; <span class="fn">is_numeric</span>(<span class="var">$b</span>)) {
+            <span class="var">$c</span> = <span class="kw">new</span> Calculadora(<span class="var">$a</span>,<span class="var">$b</span>);
+            <span class="var">$smarty</span>-&gt;<span class="fn">assign</span>(<span class="str">'resultado'</span>,<span class="var">$c</span>-&gt;<span class="fn">diff</span>());
+        }
+        <span class="var">$smarty</span>-&gt;<span class="fn">display</span>(<span class="str">'resultado.tpl'</span>)
+    }
+}</code></pre>
+
+<div id="quizD"></div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+<h3>🧠 Repaso teórico (Composer · MVC · Smarty)</h3>
+<p style="color:var(--muted);font-size:13px">Conceptos básicos que pueden aparecer reformulados.</p>
+<div id="quizD_extra"></div>
+</div>
+
+<div class="theory">
+<h3>📚 Teoría · Composer, Namespaces, MVC y Smarty</h3>
+
+<h4>1. Composer — gestor de dependencias de PHP</h4>
+<p>Composer es a PHP lo que <b>npm</b> a Node o <b>pip</b> a Python. Te permite declarar qué librerías necesita tu proyecto y descargarlas automáticamente.</p>
+<h5>composer.json — el contrato</h5>
+<pre><code>{
+  "name": "pch/dwes04",
+  "require": {
+    "smarty/smarty": "^4.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "PCH04\\": "srcpch/"
+    }
+  }
+}</code></pre>
+<ul>
+<li><b><code>require</code>:</b> dependencias necesarias en producción.</li>
+<li><b><code>require-dev</code>:</b> dependencias solo de desarrollo (PHPUnit, etc.).</li>
+<li><b><code>autoload</code>:</b> cómo cargar TUS clases automáticamente (más abajo).</li>
+</ul>
+
+<h5>composer.lock — fija las versiones exactas</h5>
+<p>Cuando ejecutas <code>composer install</code>, además de crear <code>vendor/</code>, se crea <code>composer.lock</code> con las versiones EXACTAS resueltas. Garantiza que tú y producción tengáis exactamente las mismas dependencias. <b>SÍ se sube al repositorio</b>.</p>
+
+<h5>Comandos clave</h5>
+<table>
+<tr><th>Comando</th><th>Qué hace</th></tr>
+<tr><td><code>composer install</code></td><td>Instala según el <code>lock</code> (versiones exactas). Se usa en producción/CI.</td></tr>
+<tr><td><code>composer update</code></td><td>Resuelve de nuevo desde <code>composer.json</code>, sube versiones, actualiza el lock.</td></tr>
+<tr><td><code>composer require X/Y</code></td><td>Añade una dependencia nueva (modifica json y lock).</td></tr>
+<tr><td><code>composer dump-autoload</code></td><td>Regenera los archivos de autoload (útil si has añadido clases nuevas a mano).</td></tr>
+</table>
+
+<h4>2. Namespaces — separar nombres iguales</h4>
+<p>Sin namespaces, no podrías tener dos clases llamadas <code>Pelicula</code> en el mismo proyecto (una tuya, otra de una librería). Los namespaces resuelven eso.</p>
+<pre><code>// Archivo srcpch/modelo/Pelicula.php
+namespace PCH04\modelo;            // Declarar el namespace al inicio
+
+class Pelicula {
+    // ...
+}
+
+// Otro archivo que la usa:
+use PCH04\modelo\Pelicula;          // Importar (alias)
+
+$p = new Pelicula(...);             // Ya se puede usar el nombre corto</code></pre>
+<p>Sin <code>use</code>, también puedes hacer: <code>$p = new PCH04\modelo\Pelicula(...);</code> con el nombre totalmente cualificado (FQN).</p>
+
+<h4>3. PSR-4 — autoload basado en namespaces</h4>
+<p>PSR-4 mapea un <b>prefijo de namespace</b> a un <b>directorio base</b>. Composer genera un autoloader que, cuando PHP encuentra una clase, hace la transformación:</p>
+<div class="key">
+Mapping en tu composer.json: <code>"PCH04\\": "srcpch/"</code><br><br>
+Cuando PHP necesita <code>PCH04\modelo\Pelicula</code>:<br>
+1. Quita el prefijo <code>PCH04\</code> → queda <code>modelo\Pelicula</code><br>
+2. Sustituye las barras invertidas por barras: <code>modelo/Pelicula</code><br>
+3. Añade <code>.php</code> y le pone el directorio base: <code>srcpch/modelo/Pelicula.php</code>
+</div>
+
+<h4>4. MVC — Modelo, Vista, Controlador</h4>
+<p>Patrón arquitectónico para separar responsabilidades:</p>
+<table>
+<tr><th>Capa</th><th>Responsabilidad</th><th>Ejemplo (tu DWES04)</th></tr>
+<tr><td><b>Modelo</b></td><td>Datos, lógica de negocio, acceso a BD</td><td>Pelicula.php, Peliculas.php (queries PDO)</td></tr>
+<tr><td><b>Vista</b></td><td>Renderizado de la UI (HTML)</td><td>Plantillas .tpl de Smarty</td></tr>
+<tr><td><b>Controlador</b></td><td>Coordina: recibe request → llama modelo → pasa datos a vista</td><td>ControladorPCH.php</td></tr>
+</table>
+<p>Junto al MVC suele haber un <b>front controller</b> (tu <code>index.php</code>): único punto de entrada que crea recursos compartidos (PDO, Smarty) y enruta a un controlador según parámetros.</p>
+<div class="warn"><b>Reglas que el examen suele probar:</b>
+<ul>
+<li>El controlador NUNCA hace SQL directo. Pide al modelo.</li>
+<li>El controlador NUNCA hace <code>echo</code> de HTML. Eso es la vista.</li>
+<li>El modelo NUNCA accede a <code>$_POST</code>, <code>$_GET</code>. Esos son del controlador.</li>
+</ul></div>
+
+<h4>5. Smarty — motor de plantillas</h4>
+<p>Permite separar la lógica PHP del HTML. El controlador "asigna" variables, la plantilla las usa con sintaxis propia.</p>
+<h5>Lado PHP</h5>
+<pre><code>$smarty = new Smarty();
+$smarty-&gt;setTemplateDir(__DIR__.'/plantillaspch/');
+$smarty-&gt;setCompileDir(__DIR__.'/tmp/compiled_templates/');
+
+$smarty-&gt;assign('peliculas', $listaPeliculas);
+$smarty-&gt;assign('error', $error);
+$smarty-&gt;display('lista_peliculas.tpl');</code></pre>
+
+<h5>Lado plantilla (.tpl) — sintaxis básica</h5>
+<pre><code>{* esto es un comentario *}
+
+{* Imprimir variable *}
+&lt;h1&gt;{$titulo}&lt;/h1&gt;
+
+{* Condicional *}
+{if isset($error)}
+   &lt;p class="error"&gt;{$error}&lt;/p&gt;
+{/if}
+
+{* Bucle *}
+{foreach $peliculas as $p}
+   &lt;li&gt;{$p.titulo} ({$p.anio})&lt;/li&gt;
+{/foreach}
+
+{* Incluir otra plantilla *}
+{include file='cabecera.tpl'}</code></pre>
+
+<h5>Directorios de Smarty</h5>
+<ul>
+<li><b>setTemplateDir</b> → dónde están TUS <code>.tpl</code> (los que escribes).</li>
+<li><b>setCompileDir</b> → dónde Smarty guarda las plantillas COMPILADAS a PHP (cache). Si modificas un .tpl, se recompila automáticamente.</li>
+<li><b>setCacheDir</b> → caché de salida HTML completa (opcional, mejora rendimiento).</li>
+</ul>
+
+<h4>6. Clases en PHP — recordatorio</h4>
+<pre><code>class Calculadora {
+    private $a;          // Propiedad: solo accesible dentro de la clase
+    protected $b;        // Accesible en la clase y sus hijas
+    public $c;           // Accesible desde fuera
+
+    public function __construct($a, $b) {   // Constructor
+        $this-&gt;a = $a;
+        $this-&gt;b = $b;
+    }
+
+    public function suma() {                 // Método de instancia
+        return $this-&gt;a + $this-&gt;b;
+    }
+
+    public static function PI() {             // Método estático: sin necesidad de instancia
+        return 3.14159;
+    }
+}
+
+$c = new Calculadora(2, 3);
+echo $c-&gt;suma();              // Instancia: -&gt;
+echo Calculadora::PI();        // Estático: ::</code></pre>
+
+<h4>7. Errores típicos del bloque D</h4>
+<ul>
+<li>Confundir el namespace (clave del array PSR-4) con la carpeta (valor del array).</li>
+<li>Poner <code>private function</code> en una función global → solo aplica en clases.</li>
+<li>Usar sintaxis Blade (<code>@if</code>) en Smarty o viceversa.</li>
+<li>Hacer SQL en el controlador o <code>echo</code> en el modelo (rompe MVC).</li>
+</ul>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- BLOQUE E - LARAVEL MVC -->
+<!-- ============================================ -->
+<section id="bloqueE" class="section">
+<h2>Bloque E · Laravel MVC (Rutas, Eloquent, Blade) <span class="weight">22%</span> <span class="tag warn">Tipo test · resta por fallo</span></h2>
+
+<div class="note">
+<b>Formato (según repaso):</b> <b>tipo test</b> (4 opciones, 1 correcta). Se trata de <b>reconocer</b>, no de escribir código: "es esta y no esta, por este motivo". Es de <b>los bloques que más pesan</b>. Sobre fragmentos de un proyecto Laravel se preguntan los puntos clave que tocaste en la tarea: <code>.env</code> (acceso a BD), <b>migraciones</b> (crear tablas), <b>seeders</b> (rellenar usando el modelo), <b>modelo Eloquent</b> (<code>$table</code>, <code>$fillable</code>, relaciones 1-a-muchos), <b>rutas</b> (get/post/put/delete), <b>controladores</b> (validar → usar modelo → devolver vista; binding de modelo) y <b>vistas Blade</b> sencillas (<code>@extends/@section/@yield</code>, <code>{{ }}</code>). <span style="color:var(--muted)">Blade complejo NO; solo lo más básico.</span>
+</div>
+
+<div class="scorebar" id="sb-E">
+<span class="stat"><b id="e-correct">0</b> correctas · <b id="e-wrong">0</b> erróneas · <b id="e-blank">8</b> en blanco</span>
+<span class="stat">Puntuación bruta: <b id="e-score">0,00</b>/8</span>
+<button class="reset" onclick="resetBlock('E')">Reiniciar</button>
+</div>
+
+<div class="card original">
+<h3>📄 Cuestionario original (basado en proyecto "Mascotas")</h3>
+
+<h4>FRAGMENTO E4 — routes/web.php</h4>
+<pre><code>Route::<span class="fn">get</span>(<span class="str">'/mascota/votar/'</span>, [MCT::<span class="kw">class</span>, <span class="str">'votarMascota'</span>])-&gt;<span class="fn">name</span>(<span class="str">'votar'</span>);
+Route::<span class="fn">get</span>(<span class="str">'/mascota/{mascota}/convertir/'</span>, [MCT::<span class="kw">class</span>, <span class="str">'convertirMascota'</span>])-&gt;<span class="fn">name</span>(<span class="str">'convertir'</span>);
+Route::<span class="fn">post</span>(<span class="str">'/mascota/{mascota}/borrar'</span>, [MCT::<span class="kw">class</span>, <span class="str">'borrarMascota'</span>])-&gt;<span class="fn">name</span>(<span class="str">'borrarmascota'</span>);</code></pre>
+
+<h4>FRAGMENTO E5 — modelo Mascota.php</h4>
+<pre><code><span class="kw">use</span> HasFactory;
+<span class="kw">protected</span> <span class="var">$fillable</span> = [<span class="str">'nombre'</span>, <span class="str">'publica'</span>, <span class="str">'megustas'</span>, <span class="str">'user_id'</span>,<span class="str">'descripcion'</span>];
+<span class="kw">public function</span> <span class="fn">user</span>(): BelongsTo {
+    <span class="kw">return</span> <span class="var">$this</span>-&gt;<span class="fn">belongsTo</span>(User::<span class="kw">class</span>);
+}</code></pre>
+
+<h4>FRAGMENTO E6 — controlador</h4>
+<pre><code><span class="kw">public function</span> <span class="fn">editarMascota</span>(<span class="kw">int</span> <span class="var">$masc</span>) {
+    <span class="kw">return</span> <span class="fn">view</span>(<span class="str">'formmascota'</span>);
+}
+<span class="kw">public function</span> <span class="fn">nuevaMascota</span>(Request <span class="var">$request</span>) {
+    <span class="var">$data</span> = <span class="var">$request</span>-&gt;<span class="fn">validate</span>([
+        <span class="str">'nombre'</span>      =&gt; <span class="str">'required|string|max:50'</span>,
+        <span class="str">'descripcion'</span> =&gt; <span class="str">'required|string|max:250'</span>,
+        <span class="str">'publica'</span>     =&gt; <span class="str">'required|string|in:Si,No'</span>,
+    ]);
+
+    <span class="var">$mascota</span> = <span class="kw">new</span> Mascota();
+    <span class="var">$mascota</span>-&gt;nombre = <span class="var">$data</span>[<span class="str">'nombre'</span>];
+    <span class="var">$mascota</span>-&gt;publica = <span class="var">$data</span>[<span class="str">'publica'</span>];
+    <span class="var">$mascota</span>-&gt;descripcion = <span class="var">$data</span>[<span class="str">'descripcion'</span>];
+    <span class="var">$mascota</span>-&gt;<span class="fn">save</span>();
+
+    <span class="kw">return</span> <span class="fn">view</span>(<span class="str">'mascotacreada'</span>,[<span class="str">'m'</span>=&gt;<span class="var">$mascota</span>]);
+}</code></pre>
+
+<div id="quizE_original"></div>
+</div>
+
+<div class="card replica">
+<h3>🎬 Cuestionario replicado · adaptado a tu DWES05 (CriticaPCH / PeliculaPCH)</h3>
+
+<h4>FRAGMENTO E4-PCH — routes/web.php (de tu DWES05)</h4>
+<pre><code>Route::<span class="fn">post</span>(<span class="str">'/formulario_critica_PCH'</span>,
+    [CriticaControllerPCH::<span class="kw">class</span>, <span class="str">'mostrarFormularioCriticaPCH'</span>])
+    -&gt;<span class="fn">middleware</span>(<span class="str">'auth'</span>)-&gt;<span class="fn">name</span>(<span class="str">'formcriticaPCH'</span>);
+
+Route::<span class="fn">post</span>(<span class="str">'/crear_nueva_critica_PCH/{pelicula}'</span>,
+    [CriticaControllerPCH::<span class="kw">class</span>, <span class="str">'crearNuevaCriticaPCH'</span>])
+    -&gt;<span class="fn">middleware</span>(<span class="str">'auth'</span>)-&gt;<span class="fn">name</span>(<span class="str">'crearnuevacriticaPCH'</span>);
+
+Route::<span class="fn">post</span>(<span class="str">'/borrar_critica_PCH/{critica}'</span>,
+    [CriticaControllerPCH::<span class="kw">class</span>, <span class="str">'borrarCriticaPCH'</span>])
+    -&gt;<span class="fn">middleware</span>(<span class="str">'auth'</span>)-&gt;<span class="fn">name</span>(<span class="str">'borrarcriticaPCH'</span>);</code></pre>
+
+<h4>FRAGMENTO E5-PCH — modelo CriticaPCH.php</h4>
+<pre><code><span class="kw">namespace</span> App\Models;
+<span class="kw">use</span> Illuminate\Database\Eloquent\Model;
+<span class="kw">use</span> Illuminate\Database\Eloquent\Factories\HasFactory;
+
+<span class="kw">class</span> CriticaPCH <span class="kw">extends</span> Model
+{
+    <span class="kw">use</span> HasFactory;
+    <span class="kw">protected</span> <span class="var">$table</span> = <span class="str">'criticas'</span>;
+    <span class="kw">protected</span> <span class="var">$fillable</span> = [<span class="str">'valoracion'</span>,<span class="str">'comentario'</span>,<span class="str">'pelicula'</span>,<span class="str">'usuario'</span>];
+
+    <span class="kw">public function</span> <span class="fn">pelicula</span>() {
+        <span class="kw">return</span> <span class="var">$this</span>-&gt;<span class="fn">belongsTo</span>(PeliculaPCH::<span class="kw">class</span>, <span class="str">'pelicula'</span>);
+    }
+    <span class="kw">public function</span> <span class="fn">usuario</span>() {
+        <span class="kw">return</span> <span class="var">$this</span>-&gt;<span class="fn">belongsTo</span>(User::<span class="kw">class</span>, <span class="str">'usuario'</span>);
+    }
+}</code></pre>
+
+<h4>FRAGMENTO E6-PCH — controlador CriticaControllerPCH</h4>
+<pre><code><span class="kw">public function</span> <span class="fn">crearNuevaCriticaPCH</span>(PeliculaPCH <span class="var">$pelicula</span>, Request <span class="var">$request</span>)
+{
+    <span class="var">$validated</span> = <span class="var">$request</span>-&gt;<span class="fn">validate</span>([
+        <span class="str">'valoracion'</span> =&gt; <span class="str">'required|integer|min:1|max:5'</span>,
+        <span class="str">'comentario'</span> =&gt; <span class="str">'required|string|max:255'</span>,
+    ]);
+
+    <span class="var">$critica</span> = <span class="kw">new</span> CriticaPCH;
+    <span class="var">$critica</span>-&gt;valoracion = <span class="var">$validated</span>[<span class="str">'valoracion'</span>];
+    <span class="var">$critica</span>-&gt;comentario = <span class="var">$validated</span>[<span class="str">'comentario'</span>];
+    <span class="var">$critica</span>-&gt;pelicula   = <span class="var">$pelicula</span>-&gt;id;
+    <span class="var">$critica</span>-&gt;usuario    = Auth::<span class="fn">id</span>();
+    <span class="var">$critica</span>-&gt;<span class="fn">save</span>();
+
+    <span class="kw">return</span> <span class="fn">view</span>(<span class="str">'criticas.critica_creada'</span>, [<span class="str">'pelicula'</span> =&gt; <span class="var">$pelicula</span>, <span class="str">'critica'</span> =&gt; <span class="var">$critica</span>]);
+}</code></pre>
+
+<div id="quizE_replica"></div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+<h3>🧠 Repaso teórico (Laravel básico)</h3>
+<p style="color:var(--muted);font-size:13px">Artisan, .env, Blade, relaciones Eloquent, CSRF, migraciones.</p>
+<div id="quizE_extra"></div>
+</div>
+
+<div class="theory">
+<h3>📚 Teoría · Laravel — patrón MVC moderno</h3>
+
+<h4>1. Estructura de un proyecto Laravel</h4>
+<pre><code>mi-proyecto/
+├── app/
+│   ├── Http/Controllers/   ← Controladores
+│   ├── Models/             ← Modelos Eloquent
+│   └── Providers/
+├── config/                  ← Configuración (.env la sobreescribe)
+├── database/
+│   ├── migrations/         ← Definición/cambios de la BD
+│   ├── seeders/            ← Datos de prueba
+│   └── factories/          ← Generadores de datos
+├── resources/
+│   └── views/              ← Plantillas Blade (.blade.php)
+├── routes/
+│   ├── web.php             ← Rutas con sesión, CSRF, cookies
+│   └── api.php             ← Rutas API REST (prefijo /api/, sin CSRF)
+├── public/                  ← Punto de entrada (index.php) y assets
+├── .env                     ← Variables de entorno (BD, app key...)
+├── artisan                  ← CLI de Laravel
+└── composer.json</code></pre>
+
+<h4>2. Artisan — CLI de Laravel</h4>
+<pre><code>php artisan serve                           # Levantar servidor de desarrollo (localhost:8000)
+php artisan make:model Pelicula -mcr        # Crear modelo + migration + controller resource
+php artisan make:controller PeliculaCtrl    # Solo controlador
+php artisan make:migration crear_peliculas  # Solo migración
+php artisan migrate                          # Ejecutar migraciones pendientes
+php artisan migrate:rollback                 # Deshacer última batch
+php artisan migrate:fresh --seed             # Borrar TODO, migrar y semillar (¡no en prod!)
+php artisan route:list                       # Ver todas las rutas
+php artisan tinker                           # REPL interactivo</code></pre>
+
+<h4>3. .env y configuración</h4>
+<p>El archivo <code>.env</code> contiene secretos y configuración por entorno. <b>NO se sube al repo</b> — hay un <code>.env.example</code> de plantilla. En <code>config/database.php</code> se lee con <code>env('DB_HOST')</code>.</p>
+<pre><code>APP_NAME=Laravel
+APP_ENV=local                # local | production | testing
+APP_DEBUG=true               # ¡false en producción!
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=dwes05
+DB_USERNAME=root
+DB_PASSWORD=</code></pre>
+
+<h4>4. Rutas — routes/web.php vs routes/api.php</h4>
+<table>
+<tr><th></th><th>web.php</th><th>api.php</th></tr>
+<tr><td>Prefijo URL</td><td>(ninguno)</td><td>/api/</td></tr>
+<tr><td>Sesión</td><td>Sí</td><td>No</td></tr>
+<tr><td>CSRF</td><td>Sí (verifica token)</td><td>No</td></tr>
+<tr><td>Tipo de respuesta</td><td>HTML normalmente</td><td>JSON normalmente</td></tr>
+</table>
+
+<h5>Sintaxis de rutas</h5>
+<pre><code>Route::get('/peliculas', [PeliculaController::class, 'index'])-&gt;name('peliculas.index');
+Route::post('/peliculas', [PeliculaController::class, 'store']);
+Route::put('/peliculas/{pelicula}', [PeliculaController::class, 'update']);
+Route::delete('/peliculas/{pelicula}', [PeliculaController::class, 'destroy']);
+
+// Grupos con middleware
+Route::middleware('auth')-&gt;group(function () {
+    Route::get('/perfil', ...);
+    Route::post('/critica', ...);
+});
+
+// Atajos
+Route::resource('peliculas', PeliculaController::class);    // genera las 7 rutas REST</code></pre>
+
+<h5>Route Model Binding (magia que ahorra trabajo)</h5>
+<pre><code>// Ruta: /peliculas/{pelicula}
+Route::get('/peliculas/{pelicula}', [PeliculaController::class, 'show']);
+
+// Controlador:
+public function show(Pelicula $pelicula) {   // ← Laravel hace Pelicula::findOrFail($id)
+    return view('peliculas.show', compact('pelicula'));
+}</code></pre>
+<div class="key">Si el id no existe, Laravel devuelve 404 automáticamente <b>sin entrar al método</b>. No hace falta comprobar nada.</div>
+
+<h4>5. Eloquent — el ORM de Laravel</h4>
+<p>Los modelos extienden <code>Model</code> y representan una tabla. Cada instancia es una fila.</p>
+<pre><code>namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
+
+class PeliculaPCH extends Model {
+    protected $table    = 'peliculas';                       // Nombre de la tabla
+    protected $fillable = ['titulo','genero','anio',...];   // Campos asignables masivamente
+    protected $hidden   = ['password'];                       // Campos ocultos al serializar a JSON
+}</code></pre>
+
+<h5>Consultas básicas con Eloquent</h5>
+<pre><code>Pelicula::all();                          // SELECT *
+Pelicula::find(42);                       // SELECT WHERE id = 42 (null si no existe)
+Pelicula::findOrFail(42);                 // Igual pero lanza ModelNotFoundException → 404
+Pelicula::where('anio','&gt;',2020)-&gt;get();
+Pelicula::where('genero',3)-&gt;orderBy('titulo')-&gt;take(10)-&gt;get();
+Pelicula::count();
+Pelicula::create([...]);                  // INSERT (usa $fillable)
+$p-&gt;update([...]);                        // UPDATE
+$p-&gt;delete();                             // DELETE</code></pre>
+
+<h5>Relaciones Eloquent (clave en el examen)</h5>
+<pre><code>// En Pelicula.php: una película tiene MUCHAS críticas
+public function criticas() {
+    return $this-&gt;hasMany(CriticaPCH::class, 'pelicula');   // FK 'pelicula' en críticas
+}
+
+// En Critica.php: una crítica PERTENECE a una película
+public function pelicula() {
+    return $this-&gt;belongsTo(PeliculaPCH::class, 'pelicula');
+}
+
+// Uso:
+$p = Pelicula::find(1);
+foreach ($p-&gt;criticas as $c) { ... }       // Acceso como propiedad
+$c = Critica::find(5);
+echo $c-&gt;pelicula-&gt;titulo;                  // Eloquent hace los JOINs por ti</code></pre>
+<p>Tipos: <code>hasOne</code> (1:1), <code>hasMany</code> (1:N), <code>belongsTo</code> (N:1, lado inverso), <code>belongsToMany</code> (N:M con tabla pivote).</p>
+
+<h4>6. Migraciones — versionar el esquema</h4>
+<p>Cada migración es una clase con <code>up()</code> (aplica el cambio) y <code>down()</code> (lo deshace).</p>
+<pre><code>// database/migrations/2024_05_15_..._crear_peliculas.php
+Schema::create('peliculas', function (Blueprint $table) {
+    $table-&gt;id();                                    // BIGINT AUTO_INCREMENT PRIMARY KEY
+    $table-&gt;string('titulo', 60);
+    $table-&gt;unsignedBigInteger('genero');
+    $table-&gt;foreign('genero')-&gt;references('id')-&gt;on('generos');
+    $table-&gt;integer('duracion');
+    $table-&gt;timestamps();                            // created_at, updated_at
+});</code></pre>
+
+<h4>7. Blade — motor de plantillas de Laravel</h4>
+<h5>Estructura: layout + secciones (herencia)</h5>
+<pre><code>{{-- resources/views/layouts/principal.blade.php --}}
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;@yield('titulo')&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+   &lt;nav&gt;...&lt;/nav&gt;
+   &lt;main&gt;@yield('contenido')&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+{{-- resources/views/peliculas/lista.blade.php --}}
+@extends('layouts.principal')
+@section('titulo', 'Lista de películas')
+@section('contenido')
+   &lt;h1&gt;Películas&lt;/h1&gt;
+   @foreach ($peliculas as $p)
+      &lt;p&gt;{{ $p-&gt;titulo }}&lt;/p&gt;
+   @endforeach
+@endsection</code></pre>
+
+<h5>Directivas comunes</h5>
+<table>
+<tr><th>Sintaxis</th><th>Qué hace</th></tr>
+<tr><td><code>{{ $var }}</code></td><td>Echo escapado (anti-XSS) — usar SIEMPRE para datos del usuario</td></tr>
+<tr><td><code>{!! $var !!}</code></td><td>Echo sin escapar — peligroso si no controlas el contenido</td></tr>
+<tr><td><code>@if @elseif @else @endif</code></td><td>Condicionales</td></tr>
+<tr><td><code>@foreach @endforeach</code></td><td>Bucles</td></tr>
+<tr><td><code>@extends('layout')</code></td><td>Hereda de otra plantilla</td></tr>
+<tr><td><code>@section('x') ... @endsection</code></td><td>Definir bloque</td></tr>
+<tr><td><code>@yield('x')</code></td><td>Hueco que rellenará la vista hija</td></tr>
+<tr><td><code>@include('parcial')</code></td><td>Incluir otra plantilla</td></tr>
+<tr><td><code>@csrf</code></td><td>Input oculto con token CSRF (obligatorio en POST/PUT/DELETE de web.php)</td></tr>
+<tr><td><code>@auth @endauth</code></td><td>Bloque solo para usuarios logueados</td></tr>
+<tr><td><code>@error('campo') ... @enderror</code></td><td>Mostrar error de validación de ese campo</td></tr>
+</table>
+
+<h4>8. Controladores: ciclo típico</h4>
+<pre><code>public function store(Request $request) {
+    // 1. Validar (si falla, lanza redirect con errores o JSON 422)
+    $datos = $request-&gt;validate([
+        'titulo' =&gt; 'required|string|max:60',
+        'anio'   =&gt; 'required|integer|min:1900',
+    ]);
+
+    // 2. Hacer la operación (Eloquent)
+    $pelicula = Pelicula::create($datos);
+
+    // 3. Responder
+    return redirect()-&gt;route('peliculas.show', $pelicula);
+}</code></pre>
+
+<h4>9. Conceptos de seguridad clave</h4>
+<ul>
+<li><b>CSRF (@csrf):</b> Laravel inserta un token en cada formulario; comprueba que las peticiones POST/PUT/DELETE lleven el token correcto. Bloquea ataques cross-site.</li>
+<li><b>Mass assignment:</b> <code>$fillable</code> es una whitelist. Sin ella, un atacante podría enviar <code>is_admin=1</code> en un form y modificar campos no previstos.</li>
+<li><b>XSS:</b> <code>{{ }}</code> escapa por defecto. <code>{!! !!}</code> NO escapa — solo para contenido que generaste tú.</li>
+</ul>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- BLOQUE F - REST API + GUZZLE -->
+<!-- ============================================ -->
+<section id="bloqueF" class="section">
+<h2>Bloque F · API REST + Guzzle <span class="weight">18%</span> <span class="tag warn">Tipo test · resta por fallo</span></h2>
+
+<div class="note">
+<b>Formato (según repaso):</b> <b>tipo test</b> (reconocer). Es como Laravel (U5) pero el controlador devuelve un <b>documento JSON</b> en vez de una vista Blade, y las rutas van en <code>routes/api.php</code> (get/post/put/delete, también patch). Puntos clave: <b>servidor</b> → ruta en <code>api.php</code> + controlador que <b>valida</b> los datos, actúa y <b>emite una respuesta JSON con su código HTTP</b> (200, 422, 404…); <b>cliente Guzzle</b> → hacer peticiones enviando datos como <b>formulario</b> (<code>form_params</code>), <b>query string</b> (en GET) o <b>JSON</b> (<code>'json'</code>), y luego <b>analizar el código de respuesta</b> + <code>json_decode</code> del cuerpo.
+<br><span style="color:var(--bad)"><b>NO entra:</b> SOAP (aparece en los contenidos pero no se pregunta).</span>
+</div>
+
+<div class="scorebar" id="sb-F">
+<span class="stat"><b id="f-correct">0</b> correctas · <b id="f-wrong">0</b> erróneas · <b id="f-blank">8</b> en blanco</span>
+<span class="stat">Puntuación bruta: <b id="f-score">0,00</b>/8</span>
+<button class="reset" onclick="resetBlock('F')">Reiniciar</button>
+</div>
+
+<div class="card original">
+<h3>📄 Cuestionario original (Mascotas API)</h3>
+
+<h4>FRAGMENTO F7 — rutas API</h4>
+<pre><code>Route::<span class="fn">get</span>(<span class="str">'/mascotas'</span>, [APIController::<span class="kw">class</span>,<span class="str">'listarMascotas'</span>]);
+Route::<span class="fn">post</span>(<span class="str">'/nuevamascota'</span>, [APIController::<span class="kw">class</span>,<span class="str">'crearMascota'</span>]);
+Route::<span class="fn">put</span>( <span class="str">'/mascota/{mascota}'</span>, [APIController::<span class="kw">class</span>,<span class="str">'cambiarDescripcionMascota'</span>])
+    -&gt;<span class="fn">whereNumber</span>(<span class="str">'mascota'</span>);
+Route::<span class="fn">delete</span>(<span class="str">'/mascota/{mascota}'</span>, [APIController::<span class="kw">class</span>,<span class="str">'borrarMascota'</span>])
+    -&gt;<span class="fn">whereNumber</span>(<span class="str">'mascota'</span>);</code></pre>
+
+<h4>FRAGMENTO F8 — método del controlador API</h4>
+<pre><code><span class="kw">function</span> <span class="fn">cambiarDescripcionMascota</span>(Request <span class="var">$request</span>, Mascota <span class="var">$mascota</span>): JsonResponse
+{
+    <span class="kw">if</span> (!<span class="var">$request</span>-&gt;<span class="fn">isJson</span>()) {
+        <span class="kw">return</span> <span class="fn">response</span>()-&gt;<span class="fn">json</span>(<span class="str">'ERROR'</span>, 403);
+    }
+    <span class="var">$v</span> = Validator::<span class="fn">make</span>(<span class="var">$request</span>-&gt;<span class="fn">json</span>()-&gt;<span class="fn">all</span>(), [
+        <span class="str">'descripcion'</span> =&gt; <span class="str">'required|string|max:250'</span>
+    ]);
+    <span class="kw">if</span> (<span class="var">$v</span>-&gt;<span class="fn">fails</span>()) {
+        <span class="kw">return</span> <span class="fn">response</span>()-&gt;<span class="fn">json</span>(<span class="str">'Datos incorrectos'</span>, 400);
+    }
+    <span class="var">$datos</span> = <span class="var">$v</span>-&gt;<span class="fn">validated</span>();
+    <span class="var">$mascota</span>-&gt;descripcion = <span class="var">$datos</span>[<span class="str">'descripcion'</span>];
+    <span class="var">$mascota</span>-&gt;<span class="fn">save</span>();
+    <span class="kw">return</span> <span class="fn">response</span>()-&gt;<span class="fn">json</span>(<span class="str">'Mascota modificada correctamente.'</span>, 200);
+}</code></pre>
+
+<h4>FRAGMENTO F9 — cliente Guzzle</h4>
+<pre><code><span class="var">$client</span> = <span class="kw">new</span> Client(<span class="var">$options</span>);
+<span class="var">$url</span> = <span class="str">'mascota/'</span> . <span class="fn">urlencode</span>(<span class="var">$id_mascota</span>);
+<span class="var">$response</span> = <span class="var">$gclient</span>-&gt;<span class="fn">put</span>(<span class="var">$url</span>, [<span class="str">'json'</span> =&gt; <span class="var">$datos</span>]);
+<span class="kw">switch</span>(<span class="var">$response</span>-&gt;<span class="fn">getStatusCode</span>()) {
+  <span class="kw">case</span> 400: <span class="var">$data</span> = <span class="fn">json_decode</span>(<span class="var">$response</span>-&gt;<span class="fn">getBody</span>()); ... <span class="kw">break</span>;
+  <span class="kw">case</span> 200: <span class="var">$data</span> = <span class="fn">json_decode</span>(<span class="var">$response</span>-&gt;<span class="fn">getBody</span>()); ... <span class="kw">break</span>;
+  <span class="kw">default</span>:  <span class="var">$datosVista</span>[<span class="str">'mensaje'</span>] = <span class="str">"Respuesta no esperada: "</span>.<span class="var">$response</span>-&gt;<span class="fn">getStatusCode</span>();
+}</code></pre>
+
+<div id="quizF_original"></div>
+</div>
+
+<div class="card replica">
+<h3>🎬 Cuestionario replicado · adaptado a tu DWES06 (PCH Películas API)</h3>
+
+<h4>FRAGMENTO F7-PCH — routes/api.php de tu servidor</h4>
+<pre><code>Route::<span class="fn">get</span>(<span class="str">'/listarPeliculasPCH'</span>, [PCHPeliculasControllerAPI::<span class="kw">class</span>, <span class="str">'listarPeliculasPCH'</span>]);
+Route::<span class="fn">post</span>(<span class="str">'/crearPeliculaPCH'</span>, [PCHPeliculasControllerAPI::<span class="kw">class</span>, <span class="str">'crearPeliculaPCH'</span>]);
+Route::<span class="fn">put</span>(<span class="str">'/modificarArgumentoPeliculaPCH/{pelicula}'</span>,
+    [PCHPeliculasControllerAPI::<span class="kw">class</span>, <span class="str">'modificarArgumentoPeliculaPCH'</span>]);
+Route::<span class="fn">delete</span>(<span class="str">'/borrarPeliculaPCH/{pelicula}'</span>,
+    [PCHPeliculasControllerAPI::<span class="kw">class</span>, <span class="str">'borrarPeliculaPCH'</span>]);</code></pre>
+
+<h4>FRAGMENTO F8-PCH — modificarArgumentoPeliculaPCH</h4>
+<pre><code><span class="kw">public function</span> <span class="fn">modificarArgumentoPeliculaPCH</span>(PeliculaPCH <span class="var">$pelicula</span>, Request <span class="var">$request</span>): JsonResponse
+{
+    <span class="kw">if</span> (!<span class="var">$request</span>-&gt;<span class="fn">isJson</span>()) {
+        <span class="kw">return</span> <span class="fn">response</span>()-&gt;<span class="fn">json</span>([<span class="str">'errores'</span> =&gt; [<span class="str">'Los datos deben ser JSON.'</span>]], 403);
+    }
+    <span class="var">$datos</span> = <span class="var">$request</span>-&gt;<span class="fn">json</span>()-&gt;<span class="fn">all</span>();
+    <span class="var">$argumento</span> = <span class="var">$datos</span>[<span class="str">'argumento'</span>] ?? <span class="str">''</span>;
+
+    <span class="kw">if</span> (<span class="fn">strlen</span>(<span class="var">$argumento</span>) &lt; 10 || <span class="fn">strlen</span>(<span class="var">$argumento</span>) &gt; 255) {
+        <span class="kw">return</span> <span class="fn">response</span>()-&gt;<span class="fn">json</span>([<span class="str">'errores'</span> =&gt; [<span class="str">'Longitud incorrecta.'</span>]], 422);
+    }
+
+    <span class="var">$pelicula</span>-&gt;argumento = <span class="var">$argumento</span>;
+    <span class="var">$pelicula</span>-&gt;<span class="fn">save</span>();
+    <span class="kw">return</span> <span class="fn">response</span>()-&gt;<span class="fn">json</span>([<span class="str">'resultado'</span> =&gt; 1], 200);
+}</code></pre>
+
+<h4>FRAGMENTO F9-PCH — cliente Guzzle (de tu PCH_Operaciones.php)</h4>
+<pre><code><span class="var">$response</span> = <span class="var">$cliente</span>-&gt;<span class="fn">put</span>(<span class="str">"modificarArgumentoPeliculaPCH/{$id}"</span>, [
+    <span class="str">'json'</span> =&gt; [<span class="str">'argumento'</span> =&gt; <span class="var">$argumento</span>]
+]);
+<span class="var">$status</span> = <span class="var">$response</span>-&gt;<span class="fn">getStatusCode</span>();
+<span class="var">$body</span>   = <span class="fn">json_decode</span>(<span class="var">$response</span>-&gt;<span class="fn">getBody</span>()-&gt;<span class="fn">getContents</span>(), <span class="kw">true</span>);
+
+<span class="kw">if</span> (<span class="var">$status</span> === 200) <span class="kw">return</span> [<span class="str">'ok'</span> =&gt; <span class="kw">true</span>];
+<span class="kw">if</span> (<span class="var">$status</span> === 404) <span class="kw">return</span> [<span class="str">'ok'</span> =&gt; <span class="kw">false</span>, <span class="str">'no_existe'</span> =&gt; <span class="kw">true</span>];
+<span class="kw">if</span> (<span class="var">$status</span> === 422) <span class="kw">return</span> [<span class="str">'ok'</span> =&gt; <span class="kw">false</span>, <span class="str">'errores'</span> =&gt; <span class="var">$body</span>[<span class="str">'errores'</span>]];
+<span class="kw">return</span> [<span class="str">'ok'</span> =&gt; <span class="kw">false</span>, <span class="str">'errores'</span> =&gt; [<span class="str">"Código inesperado: {$status}"</span>]];</code></pre>
+
+<div id="quizF_replica"></div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+<h3>🧠 Repaso teórico (REST + Guzzle básico)</h3>
+<p style="color:var(--muted);font-size:13px">Verbos HTTP, códigos de estado, Guzzle options, validación Laravel.</p>
+<div id="quizF_extra"></div>
+</div>
+
+<div class="theory">
+<h3>📚 Teoría · API REST y consumo con Guzzle</h3>
+
+<h4>1. ¿Qué es REST?</h4>
+<p>REST (<b>Representational State Transfer</b>) es un estilo arquitectónico para APIs que se apoya en HTTP. Principios:</p>
+<ul>
+<li><b>Recursos</b> identificados por URLs (<code>/peliculas/42</code>).</li>
+<li><b>Verbos HTTP</b> que describen la operación (GET para leer, POST para crear...).</li>
+<li><b>Sin estado:</b> cada petición es independiente, el servidor no guarda contexto entre peticiones.</li>
+<li><b>Representaciones:</b> normalmente JSON (antes era XML).</li>
+</ul>
+
+<h4>2. Verbos HTTP y su semántica</h4>
+<table>
+<tr><th>Verbo</th><th>Significado</th><th>Idempotente</th><th>Ejemplo</th></tr>
+<tr><td>GET</td><td>Leer recurso(s)</td><td>Sí</td><td>GET /peliculas</td></tr>
+<tr><td>POST</td><td>Crear recurso nuevo</td><td>No</td><td>POST /peliculas</td></tr>
+<tr><td>PUT</td><td>Reemplazar recurso completo</td><td>Sí</td><td>PUT /peliculas/42</td></tr>
+<tr><td>PATCH</td><td>Actualizar parcialmente</td><td>Sí*</td><td>PATCH /peliculas/42</td></tr>
+<tr><td>DELETE</td><td>Eliminar recurso</td><td>Sí</td><td>DELETE /peliculas/42</td></tr>
+</table>
+<p><i>Idempotente</i>: ejecutar la misma operación N veces produce el mismo resultado que ejecutarla una sola vez. GET, PUT, DELETE deben serlo. POST no (cada vez crea un nuevo recurso).</p>
+
+<h4>3. Códigos de estado HTTP</h4>
+<table>
+<tr><th>Familia</th><th>Significado</th><th>Códigos comunes</th></tr>
+<tr><td>1xx</td><td>Informativo</td><td>100 Continue</td></tr>
+<tr><td>2xx</td><td>Éxito</td><td><b>200</b> OK · <b>201</b> Created · <b>204</b> No Content</td></tr>
+<tr><td>3xx</td><td>Redirección</td><td>301 Moved · 302 Found · 304 Not Modified</td></tr>
+<tr><td>4xx</td><td>Error del cliente</td><td><b>400</b> Bad Request · <b>401</b> Unauthorized · <b>403</b> Forbidden · <b>404</b> Not Found · <b>422</b> Unprocessable Entity</td></tr>
+<tr><td>5xx</td><td>Error del servidor</td><td><b>500</b> Internal Server Error · 502 Bad Gateway · 503 Service Unavailable</td></tr>
+</table>
+<div class="key"><b>Memoriza al menos:</b> 200 OK · 201 Created (POST exitoso) · 204 No Content (DELETE exitoso) · 400 datos malformados · 401 no autenticado · 403 sin permisos · 404 no existe · 422 validación falla · 500 cagada nuestra.</div>
+
+<h4>4. API REST en Laravel</h4>
+<p>Las rutas API van en <code>routes/api.php</code>. Laravel les añade automáticamente el prefijo <code>/api/</code>. No usan sesión ni CSRF.</p>
+<pre><code>// routes/api.php
+Route::get(   '/peliculas',           [API::class, 'index']);          // GET  /api/peliculas
+Route::post(  '/peliculas',           [API::class, 'store']);          // POST /api/peliculas
+Route::put(   '/peliculas/{pelicula}',[API::class, 'update'])
+              -&gt;whereNumber('pelicula');
+Route::delete('/peliculas/{pelicula}',[API::class, 'destroy'])
+              -&gt;whereNumber('pelicula');</code></pre>
+
+<h5>Constraints de ruta</h5>
+<p><code>->whereNumber('pelicula')</code> filtra ANTES de entrar al controlador: solo coincide la ruta si <code>{pelicula}</code> es numérico, en otro caso 404. Variantes: <code>whereAlpha</code>, <code>whereAlphaNumeric</code>, <code>whereUuid</code>, <code>where('id','[0-9]+')</code> (regex).</p>
+
+<h4>5. Controladores API en Laravel</h4>
+<pre><code>use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+public function update(Pelicula $pelicula, Request $request): JsonResponse
+{
+    // 1. Comprobar que el body es JSON
+    if (!$request-&gt;isJson()) {
+        return response()-&gt;json(['error'=&gt;'Se esperaba JSON'], 403);
+    }
+
+    // 2. Validar
+    $v = Validator::make($request-&gt;json()-&gt;all(), [
+        'titulo' =&gt; 'required|string|max:60',
+        'anio'   =&gt; 'required|integer|min:1900',
+    ]);
+    if ($v-&gt;fails()) {
+        return response()-&gt;json(['errores'=&gt;$v-&gt;errors()], 422);
+    }
+
+    // 3. Ejecutar
+    $datos = $v-&gt;validated();
+    $pelicula-&gt;fill($datos)-&gt;save();
+
+    // 4. Responder
+    return response()-&gt;json(['ok'=&gt;true, 'pelicula'=&gt;$pelicula], 200);
+}</code></pre>
+
+<h5>response()->json()</h5>
+<p>Genera una respuesta con Content-Type: application/json. Le pasas un array PHP y Laravel hace el <code>json_encode</code> internamente. <b>No</b> hagas <code>json_encode</code> antes — sería doble codificación.</p>
+<pre><code>return response()-&gt;json($array, 200);     // Bien
+return response()-&gt;json(json_encode($array), 200);  // MAL (doble JSON)</code></pre>
+
+<h5>$request->validate vs Validator::make</h5>
+<ul>
+<li><b><code>$request-&gt;validate([...])</code>:</b> si falla lanza excepción → respuesta automática 422 (en API) o redirect con errors (en web). Cómodo.</li>
+<li><b><code>Validator::make(...)</code>:</b> NO lanza excepción. Te devuelve un objeto que consultas con <code>-&gt;fails()</code> y <code>-&gt;errors()</code>. Más control.</li>
+</ul>
+
+<h4>6. Guzzle — cliente HTTP en PHP</h4>
+<p>Mientras Laravel sirve la API, otro PHP puede consumirla con Guzzle. Es como hacer fetch() pero desde PHP.</p>
+<h5>Instanciar</h5>
+<pre><code>use GuzzleHttp\Client;
+
+$client = new Client([
+    'base_uri'    =&gt; 'http://localhost:8000/api/',   // se concatena a cada petición
+    'http_errors' =&gt; false,                            // NO lanzar excepción en 4xx/5xx — examinas el código tú
+    'timeout'     =&gt; 10,
+    'headers'     =&gt; ['Accept' =&gt; 'application/json'],
+]);</code></pre>
+
+<h5>Hacer peticiones</h5>
+<pre><code>$resp = $client-&gt;get('peliculas');                          // GET /api/peliculas
+$resp = $client-&gt;get('peliculas/42');
+$resp = $client-&gt;post('peliculas', ['json' =&gt; $datos]);      // POST con body JSON
+$resp = $client-&gt;put('peliculas/42', ['json' =&gt; $datos]);
+$resp = $client-&gt;delete('peliculas/42');</code></pre>
+
+<h5>Opciones según cómo enviar el body</h5>
+<table>
+<tr><th>Opción</th><th>Content-Type</th><th>Cuándo usar</th></tr>
+<tr><td><code>'json' =&gt; $array</code></td><td>application/json</td><td>API REST que espera JSON (lo más común)</td></tr>
+<tr><td><code>'form_params' =&gt; $array</code></td><td>application/x-www-form-urlencoded</td><td>Simular formulario HTML clásico</td></tr>
+<tr><td><code>'multipart' =&gt; [...]</code></td><td>multipart/form-data</td><td>Subir archivos</td></tr>
+<tr><td><code>'query' =&gt; $array</code></td><td>—</td><td>Parámetros en query string (?a=1&amp;b=2)</td></tr>
+<tr><td><code>'headers' =&gt; [...]</code></td><td>—</td><td>Añadir cabeceras (Authorization, etc.)</td></tr>
+</table>
+<div class="warn">Con <code>json</code>, Guzzle hace <code>json_encode</code> automáticamente y añade el Content-Type. Si haces <code>['json' =&gt; json_encode($datos)]</code> tendrás un string codificado dos veces.</div>
+
+<h5>Leer la respuesta</h5>
+<pre><code>$status = $resp-&gt;getStatusCode();              // 200, 404, 422, ...
+$body   = $resp-&gt;getBody()-&gt;getContents();     // string crudo del body
+$datos  = json_decode($body, true);             // → array asociativo
+
+switch ($status) {
+    case 200: /* OK */ break;
+    case 422: /* errores validación */ break;
+    case 404: /* no existe */ break;
+    default:  /* inesperado */ break;
+}</code></pre>
+
+<h4>7. Patrón típico cliente↔API (resumen)</h4>
+<pre><code>// CLIENTE (Guzzle):
+$resp = $client-&gt;put('peliculas/42', ['json' =&gt; ['titulo' =&gt; 'Nuevo']]);
+//      ↓ HTTP request: PUT /api/peliculas/42  Content-Type: application/json
+//                     body: {"titulo":"Nuevo"}
+
+// SERVIDOR (Laravel):
+public function update(Pelicula $pelicula, Request $request) {
+    // $request-&gt;isJson() → true
+    // $request-&gt;json()-&gt;all() → ['titulo' =&gt; 'Nuevo']
+    // $pelicula es la película 42 (Route Model Binding)
+    ...
+}</code></pre>
+
+<h4>8. Cosas frecuentes que confunden</h4>
+<ul>
+<li><b>routes/web.php</b> vs <b>routes/api.php</b>: el segundo tiene prefijo <code>/api/</code> automático.</li>
+<li><b>'json'</b> envía JSON; <b>'form_params'</b> envía como formulario.</li>
+<li><b>http_errors</b>: si lo dejas en true, Guzzle lanza excepción en 4xx/5xx (necesitas try/catch). Si lo pones en false, examinas el código tú mismo.</li>
+<li>El cuerpo de la respuesta es un <b>stream</b>, no un string. Por eso: <code>$resp-&gt;getBody()-&gt;getContents()</code> (o castear a string: <code>(string)$resp-&gt;getBody()</code>).</li>
+</ul>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- BLOQUE G - JAXON -->
+<!-- ============================================ -->
+<section id="bloqueG" class="section">
+<h2>Bloque G · JAXON (AJAX PHP/JS) <span class="weight">6%</span> <span class="tag warn">Tipo test · resta por fallo</span></h2>
+
+<div class="note">
+<b>Formato (según repaso):</b> <b>tipo test</b> (reconocer). Es el bloque que <b>menos pesa</b> (a propósito). Se centra en lo más importante de la tarea con <b>JAXON</b> y en <b>conceptos de AJAX</b>: qué es la tecnología y qué es una <b>aplicación híbrida</b>. Puntos clave del flujo JAXON: registrar funciones en <code>setup.php</code> → <code>backend.php</code> procesa las peticiones AJAX e invoca la función → la función valida, modifica el modelo y devuelve un objeto <code>Response</code> (con <code>assign</code>, etc.) que JAXON empaqueta en JSON para el JS del cliente, que la invoca con <code>jaxon_nombreFuncion(params)</code>.
+<br><span style="color:var(--bad)"><b>NO es el foco:</b> jQuery, <code>fetch()</code> ni <code>XMLHttpRequest</code> — el examen va sobre JAXON y los conceptos de AJAX.</span>
+</div>
+
+<div class="scorebar" id="sb-G">
+<span class="stat"><b id="g-correct">0</b> correctas · <b id="g-wrong">0</b> erróneas · <b id="g-blank">8</b> en blanco</span>
+<span class="stat">Puntuación bruta: <b id="g-score">0,00</b>/8</span>
+<button class="reset" onclick="resetBlock('G')">Reiniciar</button>
+</div>
+
+<div class="card original">
+<h3>📄 Cuestionario original (Libros)</h3>
+
+<h4>FRAGMENTO G10 — registro de funciones</h4>
+<pre><code><span class="var">$jaxon</span>-&gt;<span class="fn">register</span>(Jaxon::<span class="var">CALLABLE_FUNCTION</span>, <span class="str">'borrarLibro'</span>);
+<span class="var">$jaxon</span>-&gt;<span class="fn">register</span>(Jaxon::<span class="var">CALLABLE_FUNCTION</span>, <span class="str">'registrarLibro'</span>);</code></pre>
+
+<h4>FRAGMENTO G11 — función PHP</h4>
+<pre><code><span class="kw">function</span> <span class="fn">borrarLibro</span>(<span class="var">$isbn</span>)
+{
+    <span class="var">$response</span> = <span class="kw">new</span> Response();
+    <span class="kw">if</span> (!<span class="fn">ctype_digit</span>(<span class="var">$isbn</span>) &amp;&amp; <span class="fn">strlen</span>(<span class="var">$isbn</span>) != 13) {
+        <span class="var">$error</span> = <span class="str">"El ISBN solo puede contener 13 dígitos numéricos."</span>;
+    } <span class="kw">elseif</span> (!<span class="var">$pdo</span> = DB::<span class="fn">getConn</span>()) {
+        <span class="var">$error</span> = <span class="str">"No se puede conectar con la base de datos"</span>;
+    } <span class="kw">else</span> {
+        <span class="var">$c</span> = Libro::<span class="fn">borrarPorISBN</span>(<span class="var">$pdo</span>,<span class="var">$isbn</span>);
+        <span class="var">$mensaje</span> = <span class="str">"Libros eliminados $c (ISBN=$isbn)"</span>;
+    }
+    <span class="kw">if</span> (<span class="kw">isset</span>(<span class="var">$error</span>))   <span class="var">$response</span>-&gt;<span class="fn">alert</span>(<span class="var">$error</span>);
+    <span class="kw">elseif</span> (<span class="kw">isset</span>(<span class="var">$mensaje</span>)) <span class="var">$response</span>-&gt;<span class="fn">assign</span>(<span class="str">'mensaje'</span>,<span class="str">'innerHTML'</span>,<span class="var">$mensaje</span>);
+    <span class="kw">return</span> <span class="var">$response</span>;
+}</code></pre>
+
+<h4>FRAGMENTO G12 — vista HTML</h4>
+<pre><code>&lt;form id="eliminarLibro" onSubmit="return false;"&gt;
+  ISBN del libro:&lt;input id="isbn" data-id="isbn" type="text" name="isbn"&gt;&lt;BR&gt;
+  &lt;input type="button" value="Borrar"
+         onclick="&lt;?=<span class="fn">rq</span>()-&gt;<span class="fn">call</span>(<span class="str">'borrarLibro'</span>,<span class="fn">pm</span>()-&gt;<span class="fn">input</span>(<span class="str">'isbn'</span>))?&gt;";&gt;
+&lt;/form&gt;</code></pre>
+
+<div id="quizG_original"></div>
+</div>
+
+<div class="card replica">
+<h3>🎬 Cuestionario replicado · adaptado a tu DWES07 (Películas PCH)</h3>
+
+<h4>FRAGMENTO G10-PCH — tu setup.php</h4>
+<pre><code><span class="var">$jaxon</span>-&gt;<span class="fn">register</span>(Jaxon::<span class="var">CALLABLE_FUNCTION</span>, <span class="str">'listarPeliculasPCH'</span>);
+<span class="var">$jaxon</span>-&gt;<span class="fn">register</span>(Jaxon::<span class="var">CALLABLE_FUNCTION</span>, <span class="str">'registrarPeliculaPCH'</span>);
+<span class="var">$jaxon</span>-&gt;<span class="fn">register</span>(Jaxon::<span class="var">CALLABLE_FUNCTION</span>, <span class="str">'borrarPeliculaPCH'</span>);</code></pre>
+
+<h4>FRAGMENTO G11-PCH — función borrarPeliculaPCH</h4>
+<pre><code><span class="kw">function</span> <span class="fn">borrarPeliculaPCH</span>(<span class="var">$id</span>)
+{
+    <span class="var">$response</span> = <span class="kw">new</span> Response();
+    <span class="var">$idInt</span> = <span class="fn">filter_var</span>(<span class="var">$id</span>, <span class="kw">FILTER_VALIDATE_INT</span>);
+    <span class="kw">if</span> (<span class="var">$idInt</span> === <span class="kw">false</span>) {
+        <span class="fn">logMessage</span>(<span class="var">$response</span>, <span class="str">"Error: el ID '{$id}' no es válido."</span>);
+        <span class="kw">return</span> <span class="var">$response</span>;
+    }
+    <span class="var">$filas</span> = PeliculasPCH::<span class="fn">borrarPelicula</span>((<span class="kw">int</span>)<span class="var">$idInt</span>);
+    <span class="kw">if</span> (<span class="var">$filas</span> &gt; 0) {
+        <span class="fn">logMessage</span>(<span class="var">$response</span>, <span class="str">"Película borrada."</span>);
+        <span class="var">$response</span>-&gt;<span class="fn">assign</span>(<span class="str">'listaPeliculas'</span>, <span class="str">'innerHTML'</span>, <span class="fn">generarHTMLListaPeliculas</span>());
+    }
+    <span class="kw">return</span> <span class="var">$response</span>;
+}</code></pre>
+
+<h4>FRAGMENTO G12-PCH — tu vista index.php</h4>
+<pre><code>&lt;form id="nuevaPelicula" onSubmit="return false;"&gt;
+    &lt;input id="titulo" type="text" name="titulo"&gt;
+    &lt;span id="titulo_errores"&gt;&lt;/span&gt;
+    &lt;input type="button"
+        onclick="&lt;?= <span class="fn">rq</span>()-&gt;<span class="fn">call</span>(<span class="str">'registrarPeliculaPCH'</span>, <span class="fn">pm</span>()-&gt;<span class="fn">form</span>(<span class="str">'nuevaPelicula'</span>)) ?&gt;"
+        value="Añadir nueva película."&gt;
+&lt;/form&gt;
+&lt;div id="listaPeliculas"&gt;&lt;/div&gt;</code></pre>
+
+<div id="quizG_replica"></div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+<h3>🧠 Repaso teórico (AJAX · JAXON)</h3>
+<p style="color:var(--muted);font-size:13px">Concepto AJAX, backend.php, métodos de Response, pm() vs rq().</p>
+<div id="quizG_extra"></div>
+</div>
+
+<div class="theory">
+<h3>📚 Teoría · AJAX y JAXON</h3>
+
+<h4>1. ¿Qué es AJAX y por qué se usa?</h4>
+<p>AJAX = <b>Asynchronous JavaScript And XML</b> (aunque hoy normalmente se intercambia JSON, no XML). Es una técnica para que el navegador haga peticiones HTTP al servidor <b>sin recargar la página entera</b>, recibiendo solo los datos necesarios y actualizando dinámicamente partes del DOM.</p>
+<table>
+<tr><th>Aplicación tradicional</th><th>Aplicación AJAX</th></tr>
+<tr><td>Cada acción del usuario → request → el servidor devuelve TODA la página HTML otra vez → recarga completa</td><td>Cada acción → request asíncrono → el servidor devuelve solo los datos/HTML del trozo afectado → el JS actualiza solo esa parte del DOM</td></tr>
+<tr><td>Más lento, parpadeo visual</td><td>Más rápido, experiencia fluida</td></tr>
+<tr><td>Más tráfico de red (HTML repetido)</td><td>Menos tráfico</td></tr>
+</table>
+
+<h4>2. ¿Qué es JAXON?</h4>
+<p>JAXON es un framework PHP+JS que automatiza la mayor parte del trabajo de hacer AJAX. Está dividido en dos partes:</p>
+<ul>
+<li><b>JAXON-PHP:</b> librería del servidor. Permite registrar funciones PHP "AJAX-callable" que el cliente puede invocar.</li>
+<li><b>JAXON-JS:</b> librería JavaScript del cliente. Genera automáticamente funciones JS (<code>jaxon_NOMBRE</code>) que, al llamarlas, disparan una petición AJAX al servidor.</li>
+</ul>
+<div class="key"><b>La gracia:</b> tú no escribes nada de fetch/XMLHttpRequest. Defines una función PHP, la registras, y JAXON crea el "puente" para llamarla desde JS.</div>
+
+<h4>3. Arquitectura de una app JAXON (como tu DWES07)</h4>
+<pre><code>tu_proyecto/
+├── comun.php           ← autoload + BASE_URL
+├── setup.php           ← crea $jaxon, registra funciones, define las funciones PHP
+├── backend.php         ← endpoint AJAX: solo processRequest()
+├── index.php           ← la página real que ve el usuario (con formularios + JAXON JS)
+└── jaxon-dist/         ← librería JS de JAXON (jaxon.core.js)</code></pre>
+
+<h4>4. Setup típico — paso a paso</h4>
+<pre><code>// setup.php
+require_once __DIR__ . '/comun.php';
+use Jaxon\Jaxon;
+use Jaxon\Response\Response;
+
+$jaxon = jaxon();
+$jaxon-&gt;setOption("js.lib.uri",         BASE_URL . "jaxon-dist");
+$jaxon-&gt;setOption('core.request.uri',   BASE_URL . 'backend.php');
+
+// Una función PHP normal que devuelve Response
+function borrarPeliculaPCH($id) {
+    $response = new Response();
+    // ... lógica ...
+    $response-&gt;assign('listaPeliculas','innerHTML', generarHTMLLista());
+    return $response;
+}
+
+// REGISTRARLA para que sea invocable vía AJAX
+$jaxon-&gt;register(Jaxon::CALLABLE_FUNCTION, 'borrarPeliculaPCH');</code></pre>
+
+<h4>5. El endpoint backend.php</h4>
+<pre><code>&lt;?php
+require_once __DIR__ . '/setup.php';
+session_start();
+
+if ($jaxon-&gt;canProcessRequest()) {   // ¿es una petición AJAX dirigida a JAXON?
+    $jaxon-&gt;processRequest();         // → ejecuta la función registrada y devuelve la Response
+}</code></pre>
+<p>Si abres backend.php directamente en el navegador, <code>canProcessRequest()</code> devuelve false y no pasa nada — es solo un endpoint para las llamadas internas de JAXON-JS.</p>
+
+<h4>6. La vista (index.php) — inyectar JAXON</h4>
+<pre><code>&lt;?php require_once __DIR__.'/setup.php'; ?&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;?= $jaxon-&gt;getCss() ?&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div id="listaPeliculas"&gt;...&lt;/div&gt;
+
+   &lt;input type="button" value="Borrar"
+          onclick="&lt;?= rq()-&gt;call('borrarPeliculaPCH', pm()-&gt;input('id_pelicula')) ?&gt;"&gt;
+
+   &lt;?= $jaxon-&gt;getJs() ?&gt;        &lt;!-- librería jaxon.core.js --&gt;
+   &lt;?= $jaxon-&gt;getScript() ?&gt;     &lt;!-- init + funciones jaxon_* --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<table>
+<tr><th>Método</th><th>Qué inyecta</th></tr>
+<tr><td><code>$jaxon-&gt;getCss()</code></td><td><code>&lt;link&gt;</code> con el CSS de JAXON (en el head)</td></tr>
+<tr><td><code>$jaxon-&gt;getJs()</code></td><td><code>&lt;script src="jaxon.core.js"&gt;</code> con la librería</td></tr>
+<tr><td><code>$jaxon-&gt;getScript()</code></td><td><code>&lt;script&gt;</code> de configuración + definición de funciones <code>jaxon_borrarPeliculaPCH()</code> etc.</td></tr>
+</table>
+
+<h4>7. Construir peticiones desde la vista: rq() y pm()</h4>
+<p>JAXON proporciona dos helpers que generan el JS necesario:</p>
+<ul>
+<li><b><code>rq()-&gt;call('funcionPHP', param1, param2, ...)</code>:</b> genera el JS para invocar la función PHP registrada con esos parámetros.</li>
+<li><b><code>pm()</code> (Parameter Manager):</b> recoge valores del DOM para pasarlos como parámetros.</li>
+</ul>
+<table>
+<tr><th>Método de pm()</th><th>Qué recoge</th></tr>
+<tr><td><code>pm()-&gt;input('idCampo')</code></td><td>El value del <code>&lt;input id="idCampo"&gt;</code></td></tr>
+<tr><td><code>pm()-&gt;form('idForm')</code></td><td>Todos los campos del formulario como array asociativo (clave = name)</td></tr>
+<tr><td><code>pm()-&gt;select('idSelect')</code></td><td>El value del <code>&lt;select&gt;</code></td></tr>
+<tr><td><code>pm()-&gt;checked('idCheckbox')</code></td><td>true/false según esté marcado</td></tr>
+</table>
+
+<h4>8. La clase Response — comandos para el cliente</h4>
+<p>Una función registrada DEBE devolver una <code>Response</code>. El objeto acumula "comandos" que JAXON-JS ejecutará en el navegador al recibir la respuesta.</p>
+<pre><code>$response = new Response();
+
+// Modificar el DOM por id
+$response-&gt;assign ('idDiv', 'innerHTML', '&lt;p&gt;Nuevo contenido&lt;/p&gt;');   // REEMPLAZA
+$response-&gt;append ('log',   'innerHTML', '&lt;div&gt;Mensaje&lt;/div&gt;');       // AÑADE AL FINAL
+$response-&gt;prepend('log',   'innerHTML', '&lt;div&gt;Mensaje&lt;/div&gt;');       // AÑADE AL PRINCIPIO
+$response-&gt;clear  ('idDiv', 'innerHTML');                              // VACÍA
+
+// Modificar atributos / estilos
+$response-&gt;assign('idDiv', 'style.display', 'none');
+$response-&gt;assign('idInput', 'value', '');
+
+// Interacción con el usuario
+$response-&gt;alert('¡Operación completada!');
+$response-&gt;confirm('¿Estás seguro?', 'borrarPelicula', 42);
+$response-&gt;redirect('otra_pagina.php');
+
+// Ejecutar JS arbitrario
+$response-&gt;script('console.log("hola desde el servidor")');
+$response-&gt;call('miFuncionJS', $arg1, $arg2);
+
+return $response;</code></pre>
+
+<h4>9. Flujo completo de una llamada AJAX con JAXON</h4>
+<div class="key">
+1. Usuario pulsa botón → onclick ejecuta <code>jaxon_borrarPeliculaPCH(42)</code> (JS generado por <code>rq()-&gt;call()</code>).<br>
+2. JAXON-JS hace POST a <code>backend.php</code> con la info de la llamada.<br>
+3. <code>backend.php</code> ve <code>canProcessRequest()</code> = true → <code>processRequest()</code>.<br>
+4. JAXON-PHP localiza <code>borrarPeliculaPCH</code> entre las registradas y la invoca con (42).<br>
+5. La función ejecuta SQL, modifica el Response con <code>assign</code>/<code>alert</code>/etc, devuelve <code>$response</code>.<br>
+6. JAXON-PHP serializa el Response a JSON (los "comandos") y los devuelve.<br>
+7. JAXON-JS recibe el JSON y ejecuta los comandos en el DOM del navegador (sin recargar).<br>
+</div>
+
+<h4>10. Ventajas vs limitaciones</h4>
+<p><b>Ventajas:</b></p>
+<ul>
+<li>UI más rápida y fluida (solo se actualiza lo necesario).</li>
+<li>Menos tráfico (no se reenvía HTML completo).</li>
+<li>Permite interacciones ricas (validación al vuelo, autocompletado, drag&amp;drop con persistencia, etc.).</li>
+</ul>
+<p><b>A tener en cuenta:</b></p>
+<ul>
+<li>Más dependencia del JS — si está desactivado, la app no funciona.</li>
+<li>SEO limitado en contenido cargado por AJAX (los buscadores ven la página inicial).</li>
+<li>Conviene mantener un fallback tradicional para accesibilidad.</li>
+</ul>
+
+<h4>11. Si retornas algo que no es Response...</h4>
+<p>Si una función registrada hace <code>return "ERROR";</code> en lugar de devolver Response, JAXON-JS recibe una cadena que <b>no tiene el formato esperado de comandos</b> → ignora la respuesta, el DOM no cambia. No falla visiblemente, pero la acción del usuario parece no haber hecho nada.</p>
+</div>
+</section>
+
+</main>
+
+<script>
+// ============================================
+// NAVEGACIÓN
+// ============================================
+const sections = ['intro','bloqueA','bloqueB','bloqueC','bloqueD','bloqueE','bloqueF','bloqueG'];
+const labels   = {intro:'📘 Inicio',bloqueA:'A · PHP',bloqueB:'B · BD',bloqueC:'C · Sesiones',bloqueD:'D · MVC/Smarty',bloqueE:'E · Laravel',bloqueF:'F · API REST',bloqueG:'G · JAXON'};
+const topnav = document.getElementById('topnav');
+sections.forEach(id=>{
+  const b = document.createElement('button');
+  b.textContent = labels[id];
+  b.onclick = ()=>show(id);
+  b.dataset.target = id;
+  topnav.appendChild(b);
+});
+function show(id){
+  sections.forEach(s=>document.getElementById(s).classList.toggle('active', s===id));
+  topnav.querySelectorAll('button').forEach(b=>b.classList.toggle('active', b.dataset.target===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+show('intro');
+
+// ============================================
+// BANCO DE PREGUNTAS
+// Cada pregunta: {q, opts:[a,b,c,d], correct: indice, expl: 'explicación'}
+// ============================================
+const QUIZ = {
+  // ===== BLOQUE B EXTRA (PDO básico) =====
+  B_extra: [
+    {q:"B-T1. ¿Qué es el DSN en PDO?",
+     opts:[
+       "Un objeto de la clase PDO ya creado.",
+       "Una cadena que contiene los datos para localizar la base de datos (driver, host, puerto, dbname, charset).",
+       "El password del usuario root.",
+       "El nombre del archivo .sql con el esquema."
+     ], correct:1,
+     expl:"DSN = Data Source Name. Ejemplo: 'mysql:host=localhost;port=3306;dbname=dwes02;charset=utf8mb4'. Es el primer argumento del constructor new PDO($dsn, $user, $pass)."},
+
+    {q:"B-T2. ¿Qué hace PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION?",
+     opts:[
+       "Silencia todos los errores de PDO.",
+       "Hace que PDO lance excepciones PDOException ante cualquier error, permitiendo capturarlas con try/catch.",
+       "Convierte todos los warnings de PHP en errores fatales.",
+       "Habilita el modo debug en producción."
+     ], correct:1,
+     expl:"Es la configuración recomendada: cualquier error de SQL lanza una PDOException. Sin ella PDO solo devuelve false silenciosamente, lo que dificulta detectar bugs."},
+
+    {q:"B-T3. ¿Cuál es la diferencia entre bindParam y bindValue?",
+     opts:[
+       "bindParam liga por referencia (se evalúa al ejecutar), bindValue liga por valor (se evalúa al llamar).",
+       "Son sinónimos, no hay diferencia.",
+       "bindParam es para INSERT y bindValue para SELECT.",
+       "bindValue es más rápido y siempre se debe usar."
+     ], correct:0,
+     expl:"bindParam vincula la VARIABLE por referencia (si cambia su valor antes de execute, se usa el nuevo). bindValue vincula el VALOR en ese instante. En la práctica, para datos sueltos suele bastar bindValue."},
+
+    {q:"B-T4. Para una consulta SELECT sin parámetros, ¿qué método de PDO es el más directo?",
+     opts:[
+       "$pdo->prepare($sql)->execute()",
+       "$pdo->query($sql)",
+       "$pdo->exec($sql)",
+       "$pdo->fetch($sql)"
+     ], correct:1,
+     expl:"$pdo->query() ejecuta directamente y devuelve un PDOStatement. exec() es para INSERT/UPDATE/DELETE que devuelven nº de filas. prepare()+execute() es necesario solo si hay parámetros."},
+
+    {q:"B-T5. ¿Qué devuelve $stmt->fetch(PDO::FETCH_ASSOC)?",
+     opts:[
+       "Todos los registros como matriz bidimensional.",
+       "Un solo registro como array asociativo (clave = nombre de columna), o false si no hay más.",
+       "El número de filas devueltas.",
+       "La última consulta ejecutada."
+     ], correct:1,
+     expl:"fetch() = una fila cada vez (útil en bucles). fetchAll() = todas las filas de golpe en una matriz. FETCH_ASSOC = solo claves de texto (sin índices numéricos)."},
+
+    {q:"B-T6. ¿Qué hace $pdo->lastInsertId()?",
+     opts:[
+       "Devuelve el id del último registro modificado.",
+       "Devuelve el ID auto-incrementado del último registro INSERTADO en la conexión actual.",
+       "Devuelve el último error de PDO.",
+       "Devuelve cuántos registros hay en la tabla."
+     ], correct:1,
+     expl:"Devuelve el AUTO_INCREMENT generado por el último INSERT en esa conexión PDO. Útil para saber qué id se generó al insertar una nueva fila. Devuelve string, conviene castear a int."},
+
+    {q:"B-T7. ¿Qué herramienta de PDO previene SQL injection?",
+     opts:[
+       "addslashes() sobre los datos del POST.",
+       "Consultas preparadas con parámetros (?, :nombre) y bindValue/bindParam.",
+       "htmlspecialchars() sobre los datos del POST.",
+       "Cambiar el charset a utf8mb4."
+     ], correct:1,
+     expl:"Las prepared statements separan el SQL de los datos: el motor nunca interpreta los valores como código. addslashes y htmlspecialchars son contra XSS, no inyección SQL."}
+  ],
+
+  // ===== BLOQUE C EXTRA (Sesiones y cookies básico) =====
+  C_extra: [
+    {q:"C-T1. ¿Dónde debe llamarse session_start()?",
+     opts:[
+       "Al final del script, antes del </body>.",
+       "Al principio del script, antes de cualquier salida al navegador (echo, espacios fuera de <?php, etc.).",
+       "Solo si el usuario está autenticado.",
+       "Una vez por hora."
+     ], correct:1,
+     expl:"session_start() envía cabeceras (Set-Cookie con el PHPSESSID). Si ya hubo salida, las cabeceras están enviadas y dará warning 'headers already sent'. Por eso siempre va al principio."},
+
+    {q:"C-T2. ¿Qué diferencia hay entre session_unset() y session_destroy()?",
+     opts:[
+       "Son lo mismo.",
+       "session_unset() vacía $_SESSION en memoria; session_destroy() destruye los datos persistidos en el servidor. Lo correcto al cerrar sesión es usar ambos.",
+       "session_unset() borra cookies del navegador.",
+       "session_destroy() solo funciona en Linux."
+     ], correct:1,
+     expl:"Al cerrar sesión: 1) $_SESSION = []; 2) session_unset(); 3) session_destroy(); 4) opcionalmente eliminar la cookie PHPSESSID con setcookie() en el pasado."},
+
+    {q:"C-T3. ¿Qué tipo de estructura es $_SESSION?",
+     opts:[
+       "Un objeto stdClass.",
+       "Un string serializado.",
+       "Un array asociativo (superglobal).",
+       "Un recurso (resource)."
+     ], correct:2,
+     expl:"$_SESSION es un array asociativo superglobal. Puedes guardar cualquier valor serializable: strings, ints, arrays, incluso objetos (se serializan automáticamente)."},
+
+    {q:"C-T4. ¿Cuál es la diferencia principal entre cookie y sesión?",
+     opts:[
+       "No hay diferencia.",
+       "La cookie se guarda en el NAVEGADOR del cliente (visible y editable); la sesión se guarda en el SERVIDOR y el navegador solo conserva un identificador (PHPSESSID).",
+       "La cookie es más segura porque está cifrada.",
+       "La sesión solo dura un minuto."
+     ], correct:1,
+     expl:"Cookie = lado cliente (puede ser manipulada). Sesión = lado servidor (más segura para datos sensibles). El cliente solo guarda el id de sesión en la cookie PHPSESSID."},
+
+    {q:"C-T5. ¿Cuáles son los parámetros principales de setcookie()?",
+     opts:[
+       "Solo nombre y valor.",
+       "nombre, valor, expiración (timestamp), path, domain, secure, httponly.",
+       "Nombre, valor y tipo de dato.",
+       "Solo se puede crear cookies con SetSessionCookie()."
+     ], correct:1,
+     expl:"setcookie('nombre', 'valor', time()+3600, '/', '', false, true). Los más importantes: expiración (time() en el pasado → la borra), path (típicamente '/'), httponly (no accesible desde JS — anti XSS)."},
+
+    {q:"C-T6. ¿Para qué sirve session_regenerate_id()?",
+     opts:[
+       "Cierra la sesión.",
+       "Genera un nuevo PHPSESSID para la sesión actual, mitigando session fixation (típicamente tras un login).",
+       "Crea una nueva sesión vacía.",
+       "Inicializa una variable de sesión."
+     ], correct:1,
+     expl:"Cambia el id de sesión sin perder los datos. Buena práctica de seguridad después de iniciar sesión (evita que un atacante que conociera el id previo pueda usarlo)."},
+
+    {q:"C-T7. ¿Qué hace el flag HttpOnly en una cookie?",
+     opts:[
+       "Solo permite enviar la cookie por HTTPS.",
+       "La cookie es accesible solo desde el servidor; el JS del navegador (document.cookie) NO puede leerla. Mitiga ataques XSS.",
+       "Cifra la cookie con SHA-256.",
+       "Hace que la cookie caduque al cerrar el navegador."
+     ], correct:1,
+     expl:"HttpOnly bloquea el acceso desde JavaScript. Lo que protege HTTPS lo hace el flag 'Secure'. Para cookies de sesión: siempre HttpOnly + Secure en producción."}
+  ],
+
+  // ===== BLOQUE D (cuestionario único, original) =====
+  D: [
+    {q:"D1. En el FRAGMENTO D1, ¿qué hay que cambiar para cambiar el nombre del espacio de nombres configurado?",
+     opts:[
+       "Una vez establecido, no se puede cambiar el espacio de nombres principal, solo añadir secundarios.",
+       "Línea que comienza por \"psr\" donde pone \"src\".",
+       "No hay ningún espacio de nombres, hay que añadir uno usando classmap.",
+       "Línea que comienza por \"psr\" donde pone \"EX\"."
+     ], correct:3,
+     expl:"El namespace raíz en PSR-4 es la clave del array (\"EX\\\\\"), no el valor (\"src/\"). El valor es la carpeta donde Composer buscará las clases."},
+
+    {q:"D2. ¿Qué comando hay que ejecutar para disponer de Smarty (con el composer.json ya creado)?",
+     opts:[
+       "php artisan install",
+       "composer require",
+       "php artisan dump-autoload",
+       "composer install"
+     ], correct:3,
+     expl:"`composer install` instala las dependencias declaradas en composer.json (Smarty en este caso). `composer require X` añade una dependencia nueva; aquí ya está declarada."},
+
+    {q:"D3. Operaciones.php está en EX\\ctxls\\extra. La clase Test está en el directorio inmediatamente superior. ¿Qué use añadir?",
+     opts:[
+       "use src\\EX\\ctxls\\Test;",
+       "use EX\\ctxls\\Test;",
+       "use EX\\ctxls\\extra\\Test;",
+       "use EX\\Test;"
+     ], correct:1,
+     expl:"Si Operaciones.php está en src/ctxls/extra/ (namespace EX\\ctxls\\extra), el directorio padre es src/ctxls/ → namespace EX\\ctxls. Por tanto: use EX\\ctxls\\Test."},
+
+    {q:"D4. ¿Cómo sería el namespace a declarar en Test.php?",
+     opts:[
+       "namespace EX\\ctxls;",
+       "namespace EX\\ctxls\\extra;",
+       "namespace EX\\ctxls\\extra\\Test;",
+       "namespace EX\\ctxls\\Test;"
+     ], correct:0,
+     expl:"Test.php vive en src/ctxls/, por PSR-4 el namespace debe ser EX\\ctxls (no se incluye el nombre del archivo en el namespace)."},
+
+    {q:"D5. ¿Cómo sería el constructor de la clase Calculadora?",
+     opts:[
+       "public function Calculadora($a, $b) { ... }",
+       "public Calculadora(int $a = 0, int $b = 0) {};",
+       "public function __construct($a, $b) { ... }",
+       "public __construct(int $a, int $b) { ... }"
+     ], correct:2,
+     expl:"En PHP moderno el constructor se llama __construct y se declara con `public function __construct(...)`. La sintaxis estilo Java (mismo nombre que la clase) era de PHP 4."},
+
+    {q:"D6. En la plantilla Smarty, ¿qué previene un error si $resultado no está asignado?",
+     opts:[
+       "{ if(isset($resultado)) } {$resultado} {/if}",
+       "@isset($resultado) {$resultado} @endif",
+       "@if (isset($resultado)) {{$resultado}} @endif",
+       "{ if(isset($resultado)) } @resultado {/if}"
+     ], correct:0,
+     expl:"Smarty usa `{if ...}{/if}` y `{$variable}`. Las otras opciones son sintaxis de Blade (Laravel). Opción A respeta sintaxis Smarty."},
+
+    {q:"D7. ¿Cuál entre D2 y D3 es un controlador y por qué?",
+     opts:[
+       "FRAGMENTO D3 porque modifica datos del modelo.",
+       "FRAGMENTO D2 porque tiene la lógica de negocio, es el director de orquesta.",
+       "Ninguno; un controlador sería la clase Calculadora.",
+       "FRAGMENTO D3 porque realiza cada operación concreta usando el modelo y pasa datos a la vista."
+     ], correct:3,
+     expl:"D2 es el enrutador (front controller / index). D3 (Operaciones) es el controlador propiamente dicho: recibe datos del request, llama al modelo (Calculadora) y pasa el resultado a la vista (Smarty)."},
+
+    {q:"D8. ¿Cómo sería el método diff() coherente con `$c = new Calculadora($a,$b); $c->diff()`?",
+     opts:[
+       "public function diff() { return $this->a - $this->b; }",
+       "public static function diff() { return static::$a - static::$b; }",
+       "public function diff($a,$b) { return $a - $b; }",
+       "public static function diff($a, $b) { return $a - $b; }"
+     ], correct:0,
+     expl:"Se invoca con `$c->diff()` (objeto, sin parámetros). Eso implica método de instancia que usa propiedades del objeto ($this->a y $this->b)."}
+  ],
+
+  // ===== BLOQUE D EXTRA (Composer/MVC/Smarty básico) =====
+  D_extra: [
+    {q:"D-T1. ¿Qué es composer.lock y por qué se incluye en el repositorio?",
+     opts:[
+       "Un archivo temporal que se borra al ejecutar composer install.",
+       "Fija las versiones EXACTAS de las dependencias instaladas para que todos los desarrolladores y el servidor de producción tengan exactamente las mismas.",
+       "Bloquea el uso de Composer hasta que se introduce un password.",
+       "Es opcional y solo lo crea composer update."
+     ], correct:1,
+     expl:"composer.json declara los rangos aceptados (^4.4.1 = >=4.4.1 <5.0). composer.lock guarda la versión exacta resuelta. SÍ se sube al repo: garantiza reproducibilidad."},
+
+    {q:"D-T2. ¿Cuál es la diferencia entre composer install y composer update?",
+     opts:[
+       "Son sinónimos.",
+       "install lee composer.lock e instala esas versiones exactas; update ignora el lock, resuelve de nuevo composer.json y actualiza el lock.",
+       "install crea proyectos nuevos; update solo se usa una vez al año.",
+       "install requiere conexión; update funciona offline."
+     ], correct:1,
+     expl:"En desarrollo se usa composer update para subir versiones (genera nuevo lock). En producción/CI siempre composer install (versiones reproducibles)."},
+
+    {q:"D-T3. ¿Dónde se descargan los paquetes que pides con Composer?",
+     opts:[
+       "En /usr/lib/php/composer.",
+       "En la carpeta vendor/ del proyecto (no se sube al repo, está en .gitignore).",
+       "En la base de datos.",
+       "En la carpeta src/ junto con tu código."
+     ], correct:1,
+     expl:"Composer crea vendor/ con todas las librerías y un autoload.php. vendor/ se ignora en git (cualquiera puede regenerarlo con composer install)."},
+
+    {q:"D-T4. En PSR-4 con mapping \"PCH04\\\\\": \"srcpch/\", ¿en qué archivo se busca la clase PCH04\\modelo\\Pelicula?",
+     opts:[
+       "srcpch/PCH04/modelo/Pelicula.php",
+       "srcpch/modelo/Pelicula.php",
+       "vendor/PCH04/modelo/Pelicula.php",
+       "src/Pelicula.php"
+     ], correct:1,
+     expl:"El prefijo PCH04\\ se sustituye por srcpch/. Luego cada barra invertida del namespace se convierte en barra de directorio. PCH04\\modelo\\Pelicula → srcpch/modelo/Pelicula.php."},
+
+    {q:"D-T5. ¿Qué responsabilidad NO corresponde al controlador en MVC?",
+     opts:[
+       "Recibir y validar datos del request.",
+       "Pedir/modificar datos al modelo.",
+       "Pasar datos preparados a la vista.",
+       "Ejecutar consultas SQL directamente con PDO."
+     ], correct:3,
+     expl:"Las consultas SQL son responsabilidad del modelo. El controlador NO debe acceder directamente a la BD; pide al modelo (Peliculas::buscarPorAnio(...)) y se encarga de orquestar request → modelo → vista."},
+
+    {q:"D-T6. Sintaxis Smarty: ¿cómo se itera por un array $peliculas?",
+     opts:[
+       "{foreach $peliculas as $p} {$p.titulo} {/foreach}",
+       "@foreach ($peliculas as $p) {{ $p->titulo }} @endforeach",
+       "<?php foreach ($peliculas as $p) echo $p['titulo']; ?>",
+       "{for $p in $peliculas} {$p->titulo} {/for}"
+     ], correct:0,
+     expl:"Sintaxis nativa Smarty: {foreach $array as $item}. Acceso a propiedades con punto: $item.clave o $item->propiedad. La opción B es Blade, la C es PHP plano, la D no existe."},
+
+    {q:"D-T7. ¿Para qué sirve setCompileDir() de Smarty?",
+     opts:[
+       "Le indica dónde están las plantillas .tpl que escribes.",
+       "Le indica dónde guardará las plantillas COMPILADAS a PHP (cache de compilación).",
+       "Es donde se guardan las imágenes.",
+       "Le indica el directorio del proyecto raíz."
+     ], correct:1,
+     expl:"setTemplateDir = dónde lees los .tpl. setCompileDir = dónde Smarty guarda el .php compilado (se regenera si cambia el .tpl). setCacheDir = caché de salida HTML completa (opcional)."},
+
+    {q:"D-T8. Modificadores de acceso (public/protected/private), ¿qué declaración NO tiene sentido?",
+     opts:[
+       "private function calcular() {} dentro de una clase.",
+       "public static function porDefecto() {} dentro de una clase.",
+       "private function calcular() {} declarada FUERA de cualquier clase.",
+       "protected $columna; dentro de una clase."
+     ], correct:2,
+     expl:"public/protected/private solo aplican a miembros de clases. Una función global no acepta esos modificadores → error de sintaxis. (Misma idea que pregunta G4 del examen original.)"}
+  ],
+
+  // ===== BLOQUE E ORIGINAL =====
+  E_original: [
+    {q:"E1. En el FRAGMENTO E4, ¿qué se ejecutaría en función de la ruta?",
+     opts:["votar, convertir y borrarmascota","votarMascota, convertirMascota y borrarMascota","votar, convertir y borrar","get y post"],
+     correct:1,
+     expl:"En `[MCT::class, 'votarMascota']` el segundo elemento es el método del controlador que se ejecuta. El ->name() solo da un alias para la ruta."},
+
+    {q:"E2. Para hacer referencia a la primera ruta en una plantilla blade, ¿qué pondríamos?",
+     opts:["<A href=\"{{url('votar')}}\">Votar</A>","<A href=\"{{route('votarMascota')}}\">Votar</A>","<A href=\"{{route('votar')}}\">Votar</A>","<A href=\"{{url('votarMascota')}}\">Votar</A>"],
+     correct:2,
+     expl:"`route()` recibe el NOMBRE de la ruta (definido con ->name()). El nombre es 'votar', no 'votarMascota' (ese es el método del controlador)."},
+
+    {q:"E3. ¿Cuál de las afirmaciones sobre la clase del modelo Mascota NO es correcta?",
+     opts:["La clase debe extender la clase Migration.","La clase debe estar en el espacio de nombres App\\Models.","La clase debe llamarse Mascota.","La clase será usada por Eloquent."],
+     correct:0,
+     expl:"Las clases del modelo Eloquent extienden `Model` (Illuminate\\Database\\Eloquent\\Model). `Migration` se usa solo en archivos de database/migrations/."},
+
+    {q:"E4. ¿Cómo indicamos el nombre de la tabla en BD?",
+     opts:["private $dbtable = 'mascota';","protected $table = 'mascotas';","const \\table = Migration::table('mascotas');","private function setTable() { return 'mascotas'; }"],
+     correct:1,
+     expl:"En Eloquent se usa `protected $table = '...';`. Por defecto sería el plural inglés del nombre de la clase en snake_case."},
+
+    {q:"E5. ¿Cuál es el propósito de $fillable?",
+     opts:["Campos que NO se pueden rellenar de forma masiva.","Campos que no pueden estar vacíos.","Campos que SÍ se pueden rellenar de forma masiva.","Campos que no se rellenan automáticamente (timestamps, id...)."],
+     correct:2,
+     expl:"$fillable es una whitelist: lista los campos asignables masivamente con Model::create($arr) o $model->fill($arr). Protege contra mass-assignment."},
+
+    {q:"E6. La vista formmascota, ¿de qué tipo es?",
+     opts:["HTML, no tiene parámetros.","PHP, Blade y Smarty son compatibles con PHP.","Smarty como en todos los proyectos Laravel.","Blade, el motor de plantillas por defecto en Laravel."],
+     correct:3,
+     expl:"En Laravel el motor de plantillas por defecto es Blade (archivos .blade.php). Smarty no se usa en Laravel salvo configuración manual."},
+
+    {q:"E7. ¿Cómo mostrarías el nombre de la mascota en mascotacreada con `view('mascotacreada',['m'=>$mascota])`?",
+     opts:["<h1>{{$mascota['nombre']}}</h1>","<h1>{{$mascota->nombre}}</h1>","<h1>{{$m->nombre}}</h1>","<h1>{{$m['nombre']}}</h1>"],
+     correct:2,
+     expl:"Se pasa con la clave 'm' → en la vista existe $m, no $mascota. Como es un objeto Eloquent se accede con ->nombre."},
+
+    {q:"E8. ¿Cómo buscar la mascota por id?",
+     opts:["$mascota=Mascota::find($masc);","$mascota=Mascota::select('id_mascota', $masc);","$mascota=Mascota::only('id_mascota',$masc);","$mascota=Mascota::where('id_mascota',$masc);"],
+     correct:0,
+     expl:"`Model::find($pk)` es el método estándar de Eloquent para buscar por clave primaria. Devuelve la instancia o null."}
+  ],
+
+  // ===== BLOQUE E REPLICA (DWES05 PCH) =====
+  E_replica: [
+    {q:"E1-PCH. En el FRAGMENTO E4-PCH, ¿qué método del controlador se ejecuta para la ruta /crear_nueva_critica_PCH/{pelicula}?",
+     opts:["crearnuevacriticaPCH","crearNuevaCriticaPCH","name('crearnuevacriticaPCH')","middleware('auth')"],
+     correct:1,
+     expl:"En `[CriticaControllerPCH::class, 'crearNuevaCriticaPCH']` el segundo elemento es el método del controlador que se invoca. El name() es solo un alias para route()."},
+
+    {q:"E2-PCH. En una vista Blade, ¿cómo enlazo a la ruta de borrar crítica con name='borrarcriticaPCH' y un parámetro $critica?",
+     opts:["{{url('borrarcriticaPCH', $critica->id)}}","{{route('borrarCriticaPCH', $critica->id)}}","{{route('borrarcriticaPCH', ['critica' => $critica->id])}}","{{route('borrar_critica_PCH', $critica)}}"],
+     correct:2,
+     expl:"`route()` usa el nombre exacto ('borrarcriticaPCH', no el método del controlador) y se pasan los parámetros con el array asociativo cuya clave coincide con {critica} de la URL."},
+
+    {q:"E3-PCH. Sobre la clase CriticaPCH (FRAGMENTO E5-PCH), ¿cuál NO es correcta?",
+     opts:["Extiende Illuminate\\Database\\Eloquent\\Model.","Está en el namespace App\\Models.","Debe llamarse Critica para que Eloquent infiera la tabla.","Usa el trait HasFactory."],
+     correct:2,
+     expl:"NO es obligatorio que se llame Critica: precisamente por eso se declara `protected $table = 'criticas'` explícitamente. El nombre de la clase puede ser cualquiera."},
+
+    {q:"E4-PCH. ¿Cómo indicas en CriticaPCH que la tabla en BD es 'criticas'?",
+     opts:["protected $tablename = 'criticas';","public $table = 'criticas';","protected $table = 'criticas';","const TABLE = 'criticas';"],
+     correct:2,
+     expl:"En Eloquent la propiedad estándar es `protected $table = '...';`. Justo lo que ves en tu CriticaPCH.php."},
+
+    {q:"E5-PCH. ¿Qué hace `protected $fillable = ['valoracion','comentario','pelicula','usuario']` en CriticaPCH?",
+     opts:["Marca campos requeridos.","Permite asignación masiva (mass-assignment) sólo para esos campos.","Define los campos visibles al serializar a JSON.","Define las claves foráneas de la tabla."],
+     correct:1,
+     expl:"$fillable es la whitelist de campos asignables masivamente (con Model::create() o ->fill()). Protege contra que un atacante envíe campos no esperados como is_admin."},
+
+    {q:"E6-PCH. En tu DWES05 las vistas están en resources/views/criticas/formnuevacriticaPCH.blade.php. ¿Cómo se invoca desde el controlador?",
+     opts:["return view('criticas/formnuevacriticaPCH');","return view('criticas.formnuevacriticaPCH');","return view('formnuevacriticaPCH', 'criticas');","return view('resources.views.criticas.formnuevacriticaPCH');"],
+     correct:1,
+     expl:"Laravel usa la notación con puntos para subcarpetas: 'criticas.formnuevacriticaPCH' equivale a resources/views/criticas/formnuevacriticaPCH.blade.php."},
+
+    {q:"E7-PCH. En critica_creada.blade.php tienes acceso a $critica (instancia Eloquent). ¿Cómo muestras su valoración?",
+     opts:["{{$critica['valoracion']}}","{{$critica.valoracion}}","{{$critica->valoracion}}","{{ $critica::valoracion }}"],
+     correct:2,
+     expl:"Los modelos Eloquent son objetos: se accede con ->. {{ }} hace echo escapado para evitar XSS."},
+
+    {q:"E8-PCH. En crearNuevaCriticaPCH(PeliculaPCH $pelicula, Request $request) la variable $pelicula se obtiene automáticamente. ¿Cómo se llama esa funcionalidad de Laravel?",
+     opts:["Service Container.","Route Model Binding (autobinding).","Eloquent Resolver.","Middleware Injection."],
+     correct:1,
+     expl:"Route Model Binding: Laravel detecta el type-hint del modelo y el parámetro {pelicula} de la URL, y hace automáticamente PeliculaPCH::findOrFail($id). Si no existe → 404."}
+  ],
+
+  // ===== BLOQUE E EXTRA (Laravel básico) =====
+  E_extra: [
+    {q:"E-T1. ¿Qué comando crea un modelo Eloquent llamado Pelicula con su migración y un resource controller?",
+     opts:[
+       "php artisan create:model Pelicula --full",
+       "php artisan make:model Pelicula -mcr",
+       "php artisan new Pelicula",
+       "composer make:model Pelicula"
+     ], correct:1,
+     expl:"php artisan make:model Nombre. Flags útiles: -m migration, -c controller, -r resource (recursos REST), -mcr combina todo. También -f factory, -s seeder."},
+
+    {q:"E-T2. ¿Dónde se configuran las credenciales de base de datos en Laravel?",
+     opts:[
+       "En config/database.php (escritas en duro).",
+       "En el archivo .env (variables DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD).",
+       "En public/index.php.",
+       "En composer.json bajo 'database'."
+     ], correct:1,
+     expl:".env contiene secretos y configuración por entorno (NO se sube al repo, hay .env.example de plantilla). config/database.php lee esas variables con env('DB_HOST')."},
+
+    {q:"E-T3. En Blade, ¿cómo se extiende una plantilla maestra (layout)?",
+     opts:[
+       "@include('layouts.principal') al principio.",
+       "@extends('layouts.principal') y luego @section('contenido') ... @endsection.",
+       "<?php require('layouts/principal.php'); ?>",
+       "{% extends layouts/principal.blade.php %}"
+     ], correct:1,
+     expl:"En el layout: @yield('contenido'). En la vista hija: @extends('layouts.principal') + @section('contenido') ... @endsection. Tú lo usas en publicoPCH.blade.php y privadoPCH.blade.php."},
+
+    {q:"E-T4. ¿Cuál es la diferencia entre {{ $var }} y {!! $var !!} en Blade?",
+     opts:[
+       "No hay diferencia, son sinónimos.",
+       "{{ }} escapa el HTML (seguro contra XSS); {!! !!} imprime sin escapar (peligroso si la fuente no es de confianza).",
+       "{{ }} solo imprime strings; {!! !!} sirve para arrays.",
+       "{!! !!} se usa para variables de sesión."
+     ], correct:1,
+     expl:"{{ }} equivale a echo htmlspecialchars($var) — siempre seguro. {!! !!} hace echo directo. Solo úsalo si controlas totalmente el contenido (por ejemplo HTML que generas tú mismo)."},
+
+    {q:"E-T5. ¿Para qué sirve @csrf dentro de un formulario Blade?",
+     opts:[
+       "Es un comentario.",
+       "Genera un input oculto con un token CSRF. Sin él, Laravel rechaza los POST/PUT/DELETE con error 419.",
+       "Activa la validación automática del formulario.",
+       "Limita el formulario a 5 envíos por minuto."
+     ], correct:1,
+     expl:"CSRF (Cross-Site Request Forgery): Laravel verifica que el token enviado coincide con el de la sesión. Solo se aplica a routes/web.php; routes/api.php está exento."},
+
+    {q:"E-T6. En Eloquent, una Pelicula tiene muchas Criticas. ¿Cómo se declara la relación en el modelo Pelicula?",
+     opts:[
+       "public function criticas() { return $this->belongsTo(CriticaPCH::class); }",
+       "public function criticas() { return $this->hasMany(CriticaPCH::class, 'pelicula'); }",
+       "public function criticas() { return $this->hasOne(CriticaPCH::class); }",
+       "public $criticas = CriticaPCH::all();"
+     ], correct:1,
+     expl:"PeliculaPCH (1) tiene muchas (N) CriticaPCH → hasMany. El segundo parámetro 'pelicula' indica la FK en la tabla criticas (porque no sigue la convención pelicula_id). Justo como tienes en tu PeliculaPCH.php."},
+
+    {q:"E-T7. ¿Qué hace `php artisan migrate`?",
+     opts:[
+       "Mueve los archivos del proyecto a otro servidor.",
+       "Ejecuta las migraciones pendientes (CREATE/ALTER TABLE) y deja registro en la tabla migrations.",
+       "Crea un backup de la base de datos.",
+       "Renombra todos los modelos en plural."
+     ], correct:1,
+     expl:"migrate ejecuta los archivos de database/migrations/ que aún no se han aplicado. migrate:rollback deshace la última batch. migrate:fresh borra y vuelve a crear todo (¡no en producción!)."},
+
+    {q:"E-T8. En el controlador recibes `Request $request`. ¿Cómo lees un campo 'titulo' del formulario?",
+     opts:[
+       "$_POST['titulo']",
+       "$request->input('titulo') o $request->titulo o $request->get('titulo')",
+       "$request::titulo",
+       "Request::titulo"
+     ], correct:1,
+     expl:"$request encapsula GET, POST, JSON y archivos. ->input('clave') funciona siempre, sea POST/GET/JSON. Si quieres validar + leer en un paso: $request->validate([...])."}
+  ],
+
+  // ===== BLOQUE F ORIGINAL =====
+  F_original: [
+    {q:"F1. Para registrar la fecha de fallecimiento de una mascota (actualizar un dato), ¿qué método HTTP es más conveniente en REST?",
+     opts:["Route::get","Route::put","Route::post","Route::delete"],
+     correct:1,
+     expl:"PUT (o PATCH) es para actualizar un recurso existente. POST se usa para crear, GET para leer, DELETE para eliminar."},
+
+    {q:"F2. ¿En qué archivo encontraríamos las rutas del FRAGMENTO F7?",
+     opts:["routes/web.php","app/http/controllers/api/APIController.php","routes/api.php","app/http/controllers/api/routes.php"],
+     correct:2,
+     expl:"Las rutas de la API REST de Laravel viven en routes/api.php (por defecto con prefijo /api/). routes/web.php es para rutas con sesión y CSRF."},
+
+    {q:"F3. ¿Por qué no se usa whereNumber en la ruta POST /nuevamascota?",
+     opts:["Porque el parámetro de ruta es un formulario, no un número.","Porque el método controlador lo verifica con Request.","Porque whereNumber no se puede usar en rutas POST.","Porque la ruta no tiene parámetro de ruta."],
+     correct:3,
+     expl:"`whereNumber('mascota')` valida un parámetro {mascota} de la URL. POST /nuevamascota no tiene parámetros entre llaves, así que no hay nada que validar a nivel de ruta."},
+
+    {q:"F4. ¿Qué ocurre si cambias el segundo parámetro de cambiarDescripcionMascota por `int $dato`?",
+     opts:["Habría que eliminar whereNumber y validar dentro.","No tendría sentido, así pierdes la instancia Mascota directa.","Habría que buscar la mascota dentro del método con ese número.","No se podría hacer el cambio."],
+     correct:1,
+     expl:"Con `Mascota $mascota` Laravel hace Route Model Binding (te da la instancia directamente, 404 si no existe). Si lo cambias por int $dato, recibes el id y tendrías que buscar manualmente, perdiendo la ventaja."},
+
+    {q:"F5. Para devolver dos valores ($v1, $v2) en JSON, ¿cuál es la forma más lógica?",
+     opts:["return response()->json(json_encode({$v1,$v2}),200);","return response()->json({$v1, $v2},200);","return response()->json(json_encode([$v1,$v2]),200);","return response()->json([$v1,$v2],200);"],
+     correct:3,
+     expl:"response()->json() ya hace la conversión a JSON internamente. Le pasas el array PHP directamente (no json_encode previo, eso lo haría doble)."},
+
+    {q:"F6. ¿En cuál de estas situaciones NO se ejecuta el default del switch del FRAGMENTO F9?",
+     opts:["Cuando se envía como form normal (no JSON).","Cuando la descripción tiene 300 caracteres.","Cuando el id de la mascota no corresponde a una mascota real.","Cuando hay error 505 interno."],
+     correct:1,
+     expl:"Descripción de 300 chars → falla validación max:250 → 400 (caso ya cubierto en el switch). Las demás devuelven códigos no contemplados: 403 (no JSON), 404 (mascota inexistente por Route Model Binding), 505 → todas caen en default."},
+
+    {q:"F7. ¿Cómo podría ser el contenido de $datos para el put del FRAGMENTO F9?",
+     opts:["['descripcion'=>'Nueva descripción','mascota'=>2]","json_encode(['descripcion'=>'Nueva descripción'])","['descripcion'=>'Nueva descripción']","json_encode(['descripcion'=>'Nueva descripción','mascota'=>2])"],
+     correct:2,
+     expl:"Con `['json' => $datos]` Guzzle ya hace json_encode internamente. La mascota va en la URL (urlencode($id_mascota)), no en el body. Por eso solo descripción y como array PHP."},
+
+    {q:"F8. Si tuvieras que enviar los datos como formulario normal con Guzzle (PUT), ¿qué pondrías?",
+     opts:["$gclient->put($url, ['form_params' => json_decode($datos)])","$gclient->put($url, ['form_params' => $datos])","$gclient->post($url, ['form_params' => $datos])","$gclient->post($url, ['form_params' => json_decode($datos)])"],
+     correct:1,
+     expl:"Sigue siendo PUT (la ruta es PUT). 'form_params' envía como application/x-www-form-urlencoded y espera un array PHP, no JSON."}
+  ],
+
+  // ===== BLOQUE F REPLICA (DWES06 PCH) =====
+  F_replica: [
+    {q:"F1-PCH. ¿En qué archivo de tu DWES06/server están las rutas del FRAGMENTO F7-PCH (listarPeliculasPCH, crearPeliculaPCH, etc.)?",
+     opts:["routes/web.php","routes/api.php","app/Http/Controllers/Api/routes.php","bootstrap/app.php"],
+     correct:1,
+     expl:"En Laravel las rutas REST API van en routes/api.php (con prefijo /api/ automático y sin middleware web). Es donde tienes definidas tus rutas PCH."},
+
+    {q:"F2-PCH. En la ruta `Route::put('/modificarArgumentoPeliculaPCH/{pelicula}', ...)` ¿qué hace Laravel con el parámetro {pelicula} si el método del controlador recibe `PeliculaPCH $pelicula`?",
+     opts:["Pasa el id como string al método.","Aplica Route Model Binding y busca PeliculaPCH::findOrFail($id) (404 si no existe).","Lanza error porque {pelicula} debe ser numérico.","No hace nada; hay que llamar a find() manualmente."],
+     correct:1,
+     expl:"Route Model Binding: con el type-hint del modelo, Laravel hace automáticamente la búsqueda. Si no existe, retorna 404 sin entrar al método."},
+
+    {q:"F3-PCH. ¿Por qué crearPeliculaPCH recibe `Request $request` y no `PeliculaPCH $pelicula`?",
+     opts:["Porque es POST y no hay parámetro de ruta {pelicula}.","Por error de diseño.","Porque POST no soporta Route Model Binding.","Porque Request es obligatorio en métodos REST."],
+     correct:0,
+     expl:"crearPeliculaPCH es POST /crearPeliculaPCH (sin {pelicula} en la URL). Como crea un recurso nuevo, no existe una película previa que inyectar; sí necesita los datos del body → Request."},
+
+    {q:"F4-PCH. En tu modificarArgumentoPeliculaPCH validas `if (!$request->isJson()) { return ...403; }`. ¿Qué significa eso?",
+     opts:["Que el body es JSON parseable.","Que la cabecera Content-Type es application/json.","Que la respuesta debe ser JSON.","Que el método HTTP es PUT."],
+     correct:1,
+     expl:"isJson() comprueba la cabecera Content-Type: application/json. Sin ella, no se puede asumir que el body es JSON. Por eso devuelves 403 si no lo es."},
+
+    {q:"F5-PCH. Tu método responde `return response()->json(['errores' => $errores], 422)`. ¿Qué representa el 422?",
+     opts:["Recurso no encontrado.","No autorizado.","Datos no procesables (validación fallida).","Error interno del servidor."],
+     correct:2,
+     expl:"422 Unprocessable Entity: el servidor entendió la petición pero los datos no pasan validación. 404=no encontrado, 401/403=auth, 500=error interno."},
+
+    {q:"F6-PCH. En tu cliente PCH_Operaciones.php usas `$cliente->put(\"modificarArgumentoPeliculaPCH/{$id}\", ['json' => ['argumento' => $argumento]])`. ¿Qué hace Guzzle con 'json'?",
+     opts:["Lo envía como form-urlencoded.","Lo serializa a JSON y añade Content-Type: application/json automáticamente.","Lo añade como query string en la URL.","Lo guarda en una cookie."],
+     correct:1,
+     expl:"La opción 'json' hace dos cosas: 1) json_encode del array, 2) añade Content-Type: application/json. Por eso `$request->isJson()` lo reconoce."},
+
+    {q:"F7-PCH. En tu cliente Guzzle, cuando llega status 404 en borrarPeliculaPCH devuelves `['ok' => false, 'no_existe' => true]`. ¿Quién genera ese 404?",
+     opts:["Guzzle internamente.","Tu controlador con response()->json(...,404).","Apache porque la ruta no existe.","Laravel automáticamente por Route Model Binding si la película no existe."],
+     correct:1,
+     expl:"En tu PCHPeliculasControllerAPI::borrarPeliculaPCH recibes `$pelicula` como string (no como PeliculaPCH); haces find() manual y si es null devuelves explícitamente 404. (En cambio modificarArgumento sí usaría binding automático.)"},
+
+    {q:"F8-PCH. Para crearPeliculaPCH desde tu cliente Guzzle envías un formulario con `['form_params' => $formData]` (mira PCH_OperacionCrearPelicula). ¿Qué Content-Type genera Guzzle con form_params?",
+     opts:["application/json","application/x-www-form-urlencoded","multipart/form-data","text/plain"],
+     correct:1,
+     expl:"'form_params' simula un formulario HTML clásico → Content-Type: application/x-www-form-urlencoded. Por eso en el controlador lo recibes con $request->input('campo') normal, sin $request->json()."}
+  ],
+
+  // ===== BLOQUE F EXTRA (REST + Guzzle básico) =====
+  F_extra: [
+    {q:"F-T1. ¿Qué representa cada verbo HTTP en una API REST?",
+     opts:[
+       "GET=leer, POST=crear, PUT/PATCH=actualizar, DELETE=eliminar.",
+       "Todos son intercambiables.",
+       "POST=leer, GET=crear, PUT=eliminar.",
+       "Solo se usa POST en REST."
+     ], correct:0,
+     expl:"Cada verbo describe una intención. PUT reemplaza completo, PATCH actualiza parcial. GET nunca debe modificar datos en el servidor (idempotencia)."},
+
+    {q:"F-T2. ¿Qué significa cada código HTTP: 200, 201, 204, 400, 404, 422, 500?",
+     opts:[
+       "200=OK, 201=Created, 204=No Content, 400=Bad Request, 404=Not Found, 422=Unprocessable Entity (validación), 500=Internal Server Error.",
+       "Todos son códigos de éxito.",
+       "Los 4xx son errores del servidor, los 5xx del cliente.",
+       "Son códigos arbitrarios sin significado estándar."
+     ], correct:0,
+     expl:"Familia 2xx=éxito, 3xx=redirecciones, 4xx=error del cliente, 5xx=error del servidor. En tu DWES06 devuelves 200/422/404 según el caso."},
+
+    {q:"F-T3. ¿Qué prefijo añade Laravel automáticamente a las rutas declaradas en routes/api.php?",
+     opts:[
+       "Ninguno.",
+       "/api/",
+       "/laravel/",
+       "/rest/"
+     ], correct:1,
+     expl:"Las rutas de api.php se sirven bajo /api/. Así Route::get('/peliculas') = GET /api/peliculas. Configurable en app/Providers/RouteServiceProvider.php."},
+
+    {q:"F-T4. En Guzzle, ¿qué diferencia hay entre las opciones 'json' y 'form_params'?",
+     opts:[
+       "Ninguna.",
+       "'json' envía como application/json (Guzzle hace json_encode); 'form_params' envía como application/x-www-form-urlencoded (formulario clásico).",
+       "'json' solo funciona en GET; 'form_params' solo en POST.",
+       "'form_params' es para subir archivos; 'json' para texto."
+     ], correct:1,
+     expl:"Para subir archivos se usa 'multipart'. 'json' añade el header Content-Type automáticamente. En el server: con 'json' usas $request->isJson() + $request->json()->all(); con 'form_params' usas $request->input()."},
+
+    {q:"F-T5. En el controlador de Laravel, ¿qué hace $request->validate([...])?",
+     opts:[
+       "Solo comprueba si los datos son arrays.",
+       "Valida las reglas; si fallan lanza una excepción que en una API devuelve automáticamente JSON con errores y status 422.",
+       "Convierte todos los campos a string.",
+       "Inserta los datos en la BD."
+     ], correct:1,
+     expl:"Si el header es Accept: application/json (o la ruta está en api.php), la excepción de validación se convierte en respuesta JSON 422 con la estructura {errors:{campo:[mensajes]}}. Si es web, redirige con flash de errores."},
+
+    {q:"F-T6. ¿Cómo obtienes el código de estado y el cuerpo de la respuesta en Guzzle?",
+     opts:[
+       "$response->status() y $response->body()",
+       "$response->getStatusCode() y json_decode($response->getBody()->getContents(), true)",
+       "$response[0] y $response[1]",
+       "$response::CODE y $response::BODY"
+     ], correct:1,
+     expl:"Es justo lo que haces en tu PCH_Operaciones.php. getBody() devuelve un stream; getContents() lo lee como string; json_decode lo parsea (segundo arg true = array asociativo)."},
+
+    {q:"F-T7. Si pides http_errors=true en Guzzle y el server devuelve 404, ¿qué ocurre?",
+     opts:[
+       "Guzzle lanza una ClientException (4xx) o ServerException (5xx); el código tras put/get no se ejecuta sin try/catch.",
+       "Guzzle ignora el error.",
+       "El cliente cae con error fatal de PHP sin posibilidad de captura.",
+       "Devuelve siempre status 200."
+     ], correct:0,
+     expl:"Por eso en tu cliente usas 'http_errors' => false: para examinar el código de respuesta tú mismo sin que Guzzle lance excepciones. Cualquier opción es válida según el patrón que prefieras."},
+
+    {q:"F-T8. Route::put('/recurso/{id}', ...)->whereNumber('id'), ¿qué efecto tiene whereNumber?",
+     opts:[
+       "Convierte el id a número dentro del controlador.",
+       "Restricción de ruta: solo coincidirá si {id} es numérico; cualquier otra cosa cae como 404.",
+       "Valida que el body sea un número.",
+       "Limita la cantidad de peticiones."
+     ], correct:1,
+     expl:"Las constraints de ruta filtran ANTES de entrar al controlador. También hay whereAlpha, whereAlphaNumeric, whereUuid, where('id','[0-9]+') (regex genérica)."}
+  ],
+
+  // ===== BLOQUE G ORIGINAL =====
+  G_original: [
+    {q:"G1. ¿Qué hay que añadir en G12 para mostrar el mensaje al eliminar el libro?",
+     opts:["<P data-id=\"mensaje\"></H1>","<P name=\"mensaje\"></H1>","<H1 id=\"mensaje\"></H1>","<P>{$mensaje}</H1>"],
+     correct:2,
+     expl:"En G11 se hace `$response->assign('mensaje', 'innerHTML', $mensaje)` que actualiza el elemento con id=\"mensaje\". Solo la opción C tiene id=\"mensaje\" (las demás usan data-id, name o sintaxis Smarty)."},
+
+    {q:"G2. ¿Cuál de los siguientes JS sería equivalente al onclick que usa rq()->call()?",
+     opts:["onclick=\"<?=jaxon_call('borrarLibro',jaxon.$('isbn').value);?>\"","onclick=\"<?=jaxon_borrarLibro(pm()->input('isbn'));?>\"","onclick=\"jaxon_borrarLibro(document.getElementById('isbn').value);\"","onclick=\"let v=document.getElementById('mascota').value; jaxon.borrarLibro(v);\""],
+     correct:2,
+     expl:"JAXON crea funciones JS llamadas jaxon_NOMBRE (jaxon_borrarLibro). Se invocan desde el cliente con los valores leídos del DOM. La C es JS puro válido."},
+
+    {q:"G3. `$response->assign('mensaje','innerHTML',$mensaje)` ¿qué hace?",
+     opts:["Establece el valor como contenido del elemento con name=\"mensaje\".","Establece el valor como contenido del elemento con data-id=\"mensaje\".","Ninguna es correcta.","Establece el valor como contenido del elemento con id=\"mensaje\"."],
+     correct:3,
+     expl:"`assign(id, atributo, valor)` localiza por id y modifica el atributo indicado (en este caso innerHTML). Por eso el HTML debe tener id=\"mensaje\"."},
+
+    {q:"G4. ¿Tiene sentido declarar registrarLibro como `private function registrarLibro(...)`?",
+     opts:["No, no se va a definir dentro de una clase.","No, si es privada no es accesible vía AJAX.","No, ya que están en el mismo archivo donde se registran. Aunque se ponga private, se puede registrar igualmente.","Solo tiene sentido si la función se va a usar tras autenticación."],
+     correct:0,
+     expl:"`private` solo se aplica a métodos dentro de clases. Aquí registrarLibro es una función global (no dentro de una clase) → poner `private` antes daría error de sintaxis."},
+
+    {q:"G5. ¿Cuál es el propósito del método register?",
+     opts:["Registrar una función JS para llamarla desde el servidor.","Registrar una función PHP para llamarla desde backend con JAXON-PHP.","Registrar una función PHP para llamarla vía AJAX desde el cliente.","Registrar una función JS para llamarla desde el servidor para obtener info del cliente."],
+     correct:2,
+     expl:"register() expone una función PHP del servidor para que pueda ser invocada vía AJAX desde el JS del navegador. Es la pieza clave que une cliente y servidor en JAXON."},
+
+    {q:"G6. ¿Qué ventaja tiene sobre una app web tradicional?",
+     opts:["Menos carga del servidor, eliminación en el cliente.","UI más segura por enviar menos información.","Menos carga del cliente, todo en el servidor.","UI más rápida porque solo se actualiza lo necesario; puede complementar lo tradicional."],
+     correct:3,
+     expl:"AJAX evita recargar toda la página: solo se actualiza el trozo del DOM necesario (más rápido y fluido). No es más seguro per se, y la lógica sigue ejecutándose en el servidor."},
+
+    {q:"G7. ¿Qué ocurría si los datos del formulario se enviaran por POST tradicional en vez de AJAX?",
+     opts:["Se reciben en JAXON-PHP como array asociativo; hay que usar filter_input.","JAXON-PHP transforma el array automáticamente.","Habría que crear un script PHP aparte para recibir y devolver HTML completo.","No es compatible y daría error."],
+     correct:2,
+     expl:"JAXON espera peticiones AJAX que él mismo enruta. Un POST tradicional iría a la URL del form (no a backend.php de JAXON), por lo que harías un PHP normal que devuelva HTML completo de la página."},
+
+    {q:"G8. Si la función retornara `return \"ERROR: revisa ISBN\";` en vez de Response, ¿qué ocurriría en el cliente?",
+     opts:["Es JSON válido, se muestra en consola.","Provoca fallo, modifica el DOM incorrectamente.","JAXON-PHP lo convierte en JSON automáticamente.","La página no se modifica al no ser una respuesta JSON válida que JAXON-JS pueda interpretar."],
+     correct:3,
+     expl:"JAXON-JS espera el JSON con estructura específica (comandos de actualización del DOM) que genera Response. Una cadena suelta no es ese formato → JAXON-JS no la interpreta y el DOM no cambia."}
+  ],
+
+  // ===== BLOQUE G REPLICA (DWES07 PCH) =====
+  G_replica: [
+    {q:"G1-PCH. En tu setup.php registras `borrarPeliculaPCH` con `$jaxon->register(Jaxon::CALLABLE_FUNCTION, 'borrarPeliculaPCH')`. ¿Qué consigue esto?",
+     opts:["Hace pública la función vía web normal.","Permite que JAXON-JS invoque la función PHP vía AJAX.","La función se ejecuta automáticamente al cargar la página.","Define una ruta REST.."],
+     correct:1,
+     expl:"register() expone la función PHP para que JAXON-JS pueda llamarla con jaxon_borrarPeliculaPCH(id) desde el navegador, vía AJAX a backend.php."},
+
+    {q:"G2-PCH. En tu index.php tienes `onclick=\"<?= rq()->call('registrarPeliculaPCH', pm()->form('nuevaPelicula')) ?>\"`. ¿Qué hace pm()->form('nuevaPelicula')?",
+     opts:["Captura el id del formulario y lo envía como string.","Convierte todos los inputs del form en un array asociativo y lo envía como parámetro.","Resetea el formulario tras enviar.","Hace submit clásico del formulario."],
+     correct:1,
+     expl:"pm() es ParameterManager. form('id') recoge todos los inputs del formulario con ese id y los envía como un array asociativo (clave=name, valor=value). Por eso tu función recibe `array $datos`."},
+
+    {q:"G3-PCH. Tu borrarPeliculaPCH hace `$response->assign('listaPeliculas','innerHTML', generarHTMLListaPeliculas())`. ¿Qué pasa en el cliente?",
+     opts:["El navegador descarga la lista como archivo.","Se ejecuta una redirección a listaPeliculas.html.","Se sustituye el contenido HTML del elemento <div id=\"listaPeliculas\"> sin recargar la página.","Se abre un alert con el HTML."],
+     correct:2,
+     expl:"assign(id, 'innerHTML', html) modifica solo ese trozo del DOM. Esa es la esencia de AJAX: actualizar parte de la página sin recargar."},
+
+    {q:"G4-PCH. En tu registrarPeliculaPCH, cuando hay error de validación haces `$response->assign(\"{$campo}_errores\", 'innerHTML', $errores[$campo])`. ¿Qué necesita haber en index.php para que se vea?",
+     opts:["Un <input id=\"titulo_errores\">.","Un elemento HTML con id=\"titulo_errores\", id=\"genero_errores\", etc. (uno por campo).","Una cookie llamada errores.","Una variable JavaScript llamada errores."],
+     correct:1,
+     expl:"assign busca por id. En tu vista tienes `<span id=\"titulo_errores\">`, `<span id=\"genero_errores\">`, etc. JAXON sustituye el innerHTML de cada uno con el mensaje correspondiente."},
+
+    {q:"G5-PCH. ¿Por qué tu logMessage usa `$r->prepend('log', 'innerHTML', ...)` en vez de assign?",
+     opts:["Para añadir el mensaje al PRINCIPIO del div sin borrar los anteriores.","Porque assign no funciona con divs.","Por convención de nombres en JAXON.","Porque prepend es más rápido."],
+     correct:0,
+     expl:"prepend() añade contenido al inicio del innerHTML existente (sin reemplazar). Útil para logs/historial donde quieres mantener los mensajes previos. assign() los reemplazaría."},
+
+    {q:"G6-PCH. En tu index.php tienes `<input type=\"button\" onclick=\"<?= rq()->call('listarPeliculasPCH') ?>\">`. ¿Qué genera rq()->call(...) en el HTML final?",
+     opts:["PHP que se ejecuta en el servidor cada clic.","Código JS que invoca jaxon_listarPeliculasPCH() vía AJAX.","Una llamada a fetch() directa al backend.","Un formulario oculto que se autoenvía."],
+     correct:1,
+     expl:"rq() genera el código JS necesario para que el clic dispare una petición AJAX (en JS sería algo como jaxon_listarPeliculasPCH() ). Se ejecuta en cliente al pulsar."},
+
+    {q:"G7-PCH. En tu backend.php tienes solo `if ($jaxon->canProcessRequest()) $jaxon->processRequest();`. ¿Qué pasa si abres backend.php directamente en el navegador?",
+     opts:["Se muestra la lista de películas.","Se ejecuta processRequest() y aparece un error.","No pasa nada visible: canProcessRequest() devuelve false porque no hay petición AJAX, y processRequest no se ejecuta.","Redirige a index.php."],
+     correct:2,
+     expl:"backend.php es solo el endpoint de las peticiones AJAX de JAXON. Si lo abres directamente (GET sin parámetros JAXON), canProcessRequest() devuelve false y no se hace nada."},
+
+    {q:"G8-PCH. Tu función buscarPeliculasOMDB_PCH usa Guzzle para llamar a una API externa (OMDB). ¿Qué hace especial esto frente a otras funciones JAXON?",
+     opts:["Es la única que no es AJAX.","Combina JAXON (cliente↔servidor) con Guzzle (servidor↔servicio externo) — capa adicional.","No se puede registrar con JAXON porque hace llamadas externas.","Necesita Laravel para funcionar."],
+     correct:1,
+     expl:"Es un patrón típico: el navegador llama vía JAXON al PHP del servidor, y éste a su vez actúa como cliente HTTP (Guzzle) consumiendo una API externa. Combina lo aprendido en DWES06 y DWES07."}
+  ],
+
+  // ===== BLOQUE G EXTRA (AJAX y JAXON básico) =====
+  G_extra: [
+    {q:"G-T1. ¿Qué significan las siglas AJAX?",
+     opts:[
+       "Advanced Java And XML.",
+       "Asynchronous JavaScript And XML — técnica para hacer peticiones HTTP desde el navegador sin recargar la página, hoy con JSON en lugar de XML.",
+       "Apache JAvaScript eXtended.",
+       "Es un framework de JavaScript."
+     ], correct:1,
+     expl:"Aunque el nombre incluye XML, en la práctica moderna se usa JSON. La esencia: JS hace fetch/XHR al servidor, recibe datos y actualiza solo una parte del DOM."},
+
+    {q:"G-T2. ¿Cuál es el papel de backend.php en una aplicación JAXON?",
+     opts:[
+       "Es la página principal que ve el usuario.",
+       "Es el endpoint donde JAXON-JS envía las peticiones AJAX; processRequest() las despacha a la función PHP registrada.",
+       "Es donde se configura la base de datos.",
+       "Es un archivo de respaldo."
+     ], correct:1,
+     expl:"En tu DWES07: backend.php contiene SOLO session_start, require setup.php (donde se registran las funciones) y processRequest() si canProcessRequest(). El usuario nunca lo abre directamente."},
+
+    {q:"G-T3. Diferencia entre $response->assign vs $response->append vs $response->prepend.",
+     opts:[
+       "Son sinónimos.",
+       "assign REEMPLAZA el atributo (innerHTML, value, style.display...); append AÑADE al final del contenido existente; prepend AÑADE al principio.",
+       "assign es para variables; append/prepend para arrays.",
+       "assign requiere autenticación."
+     ], correct:1,
+     expl:"En tu logMessage usas prepend('log', 'innerHTML', ...) para que los mensajes nuevos aparezcan ARRIBA. Si usaras assign reemplazarías el log entero."},
+
+    {q:"G-T4. ¿Qué hace $response->alert('mensaje')?",
+     opts:[
+       "Imprime el mensaje en la consola del servidor.",
+       "Envía al navegador la instrucción de mostrar un alert() JavaScript con ese mensaje.",
+       "Lanza una excepción.",
+       "Guarda el mensaje en la sesión."
+     ], correct:1,
+     expl:"Response acumula 'comandos' que JAXON-JS interpreta al recibirlos. alert() es uno; assign, redirect, script, call, addHandler son otros."},
+
+    {q:"G-T5. Una función PHP registrada con JAXON DEBE retornar...",
+     opts:[
+       "Un string con HTML.",
+       "Una instancia de Jaxon\\Response\\Response.",
+       "Un array asociativo.",
+       "Nada (void)."
+     ], correct:1,
+     expl:"Sin Response, JAXON-JS no sabe qué hacer en el navegador. Si retornas un string suelto, el cliente no actualiza nada (como muestra la pregunta G8 del examen original)."},
+
+    {q:"G-T6. ¿Qué inyectan en el HTML las funciones $jaxon->getCss(), getJs() y getScript()?",
+     opts:[
+       "Etiquetas <link> con el CSS de JAXON, <script src> con la librería JAXON-JS, y <script> con la configuración + funciones registradas para que JS las pueda invocar.",
+       "Solo comentarios HTML.",
+       "Una redirección a otro servidor.",
+       "Una imagen de fondo."
+     ], correct:0,
+     expl:"En tu index.php: getCss en el <head>, getJs (la librería) y getScript (init + bindings) antes de </body>. Sin ellos, jaxon_funcionN no existiría en JS."},
+
+    {q:"G-T7. Diferencia entre pm()->input('idCampo') y pm()->form('idForm').",
+     opts:[
+       "Son sinónimos.",
+       "pm()->input recoge el valor de un SOLO input por su id; pm()->form recoge TODOS los inputs del formulario y los envía como array asociativo (clave = name).",
+       "input es para texto; form para formularios PHP.",
+       "form solo funciona en GET."
+     ], correct:1,
+     expl:"En tu DWES07: borrarPeliculaPCH recibe pm()->input('isbn') = un valor único; registrarPeliculaPCH recibe pm()->form('nuevaPelicula') = todos los campos del form como array."},
+
+    {q:"G-T8. ¿Qué hace canProcessRequest() en JAXON?",
+     opts:[
+       "Comprueba si el usuario tiene permisos.",
+       "Devuelve true si la petición HTTP actual es una llamada AJAX dirigida a una función registrada en JAXON; false en otro caso.",
+       "Comprueba la conexión a la BD.",
+       "Comprueba si hay una sesión activa."
+     ], correct:1,
+     expl:"Sirve para que backend.php pueda recibir peticiones normales (que ignora) sin reventar. Solo procesa si es una invocación JAXON real."}
+  ]
+};
+
+// ============================================
+// RENDERIZADO DE PREGUNTAS Y SCORING
+// ============================================
+const state = {}; // {blockKey: {qIndex: 'correct'|'wrong'|null}}
+
+function escHTML(s){
+  return String(s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+function renderQuiz(containerId, key, blockLetter){
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const qs = QUIZ[key];
+  state[key] = qs.map(()=>null);
+
+  qs.forEach((q,i)=>{
+    const div = document.createElement('div');
+    div.className = 'q';
+    div.innerHTML = `<div class="qhead">${escHTML(q.q)}</div>` +
+      q.opts.map((o,j)=>`
+        <label class="opt" data-i="${i}" data-j="${j}">
+          <input type="radio" name="${key}-${i}">
+          <span><b>${'ABCD'[j]})</b> <code style="background:#0d1117;padding:1px 6px;border-radius:3px;color:#e6edf3;font-size:13px">${escHTML(o)}</code></span>
+        </label>`).join('') +
+      `<div class="feedback"></div>`;
+    container.appendChild(div);
+
+    div.querySelectorAll('.opt').forEach(opt=>{
+      opt.addEventListener('click',()=>{
+        if (state[key][i] !== null) return; // ya respondida
+        const j = parseInt(opt.dataset.j);
+        const correct = j === q.correct;
+        state[key][i] = correct ? 'correct' : 'wrong';
+        opt.classList.add(correct?'correct':'wrong');
+        if (!correct){
+          // también marca la correcta
+          div.querySelectorAll('.opt')[q.correct].classList.add('correct');
+        }
+        const fb = div.querySelector('.feedback');
+        fb.classList.add('show', correct?'ok':'ko');
+        fb.innerHTML = `<b>${correct?'✓ Correcta':'✗ Incorrecta'}.</b> ${escHTML(q.expl)}`;
+        // bloquear inputs
+        div.querySelectorAll('input').forEach(inp=>inp.disabled=true);
+        updateScore(blockLetter);
+      });
+    });
+  });
+  updateScore(blockLetter);
+}
+
+function updateScore(letter){
+  // En bloque E y F hay dos quizzes (original y replica): los sumamos juntos
+  let correct=0, wrong=0, total=0;
+  Object.entries(state).forEach(([k,arr])=>{
+    if (k===letter || k.startsWith(letter+'_')){
+      arr.forEach(v=>{
+        total++;
+        if (v==='correct') correct++;
+        if (v==='wrong') wrong++;
+      });
+    }
+  });
+  const blank = total - correct - wrong;
+  const raw = correct - wrong*0.25;
+  const elC = document.getElementById(letter.toLowerCase()+'-correct');
+  const elW = document.getElementById(letter.toLowerCase()+'-wrong');
+  const elB = document.getElementById(letter.toLowerCase()+'-blank');
+  const elS = document.getElementById(letter.toLowerCase()+'-score');
+  if (elC) elC.textContent = correct;
+  if (elW) elW.textContent = wrong;
+  if (elB) elB.textContent = blank;
+  if (elS) elS.textContent = raw.toFixed(2).replace('.',',') + '/' + total;
+}
+
+// Mapa bloque → [containerId, quizKey] que se renderizan/recargan al pulsar reset
+const blockRender = {
+  B: [['quizB_extra','B_extra']],
+  C: [['quizC_extra','C_extra']],
+  D: [['quizD','D'], ['quizD_extra','D_extra']],
+  E: [['quizE_original','E_original'], ['quizE_replica','E_replica'], ['quizE_extra','E_extra']],
+  F: [['quizF_original','F_original'], ['quizF_replica','F_replica'], ['quizF_extra','F_extra']],
+  G: [['quizG_original','G_original'], ['quizG_replica','G_replica'], ['quizG_extra','G_extra']]
+};
+
+function resetBlock(letter){
+  Object.keys(state).forEach(k=>{
+    if (k===letter || k.startsWith(letter+'_')){
+      delete state[k];
+    }
+  });
+  (blockRender[letter] || []).forEach(([cid, key])=>{
+    const el = document.getElementById(cid);
+    if (el){ el.innerHTML=''; renderQuiz(cid, key, letter); }
+  });
+}
+
+// Renderizar todos los cuestionarios al cargar
+Object.entries(blockRender).forEach(([letter, items])=>{
+  items.forEach(([cid, key])=>{
+    if (document.getElementById(cid)) renderQuiz(cid, key, letter);
+  });
+  // Mostrar scorebar si tiene al menos una pregunta
+  const sb = document.getElementById('sb-'+letter);
+  if (sb) sb.style.display='';
+});
+</script>
+
+</body>
+</html>
